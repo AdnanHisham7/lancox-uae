@@ -1,0 +1,218 @@
+---
+import { siteConfig } from "@/config/site.config";
+import { productCategories } from "@/data/products";
+
+export interface Props {
+  defaultCategory?: string;
+  formId?: string;
+}
+
+const { defaultCategory = "", formId = "rfq-form" } = Astro.props;
+---
+
+<div class="bg-white rounded-lg border border-industrial-border shadow-soft-lg p-6 sm:p-8">
+  <div class="mb-6">
+    <span class="text-xs font-semibold uppercase tracking-wider text-bronze-700 block mb-1">
+      Direct Procurement Desk
+    </span>
+    <h3 class="text-xl sm:text-2xl font-display font-bold text-ink">
+      Request for Quotation (RFQ)
+    </h3>
+    <p class="text-xs sm:text-sm text-ink-muted mt-1.5">
+      Submit your material specifications, Bill of Quantities (BOQ), or technical line items. Our JAFZA procurement team will review and respond promptly.
+    </p>
+  </div>
+
+  <!-- 
+    STATIC FORM BACKEND INTEGRATION NOTE:
+    This form is provider-agnostic. To connect to a live backend, replace the action attribute
+    with your endpoint:
+    - Formspree: action="https://formspree.io/f/YOUR_FORM_ID"
+    - Web3Forms: action="https://api.web3forms.com/submit"
+    - Netlify: Add data-netlify="true" and name="rfq-form"
+    - Custom API: Handle via client-side fetch in the script below
+  -->
+  <form
+    id={formId}
+    method="POST"
+    action="https://formspree.io/f/placeholder_lancox"
+    class="space-y-4"
+    data-track="rfq-submission"
+  >
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label for={`${formId}-name`} class="block text-xs font-semibold text-ink uppercase tracking-wider mb-1">
+          Full Name <span class="text-rose-600">*</span>
+        </label>
+        <input
+          type="text"
+          id={`${formId}-name`}
+          name="name"
+          required
+          placeholder="e.g. Eng. Ahmed Mansoor"
+          class="w-full px-3.5 py-2.5 text-sm bg-canvas border border-industrial-border rounded focus:bg-white focus:border-bronze-500 transition-colors"
+        />
+      </div>
+
+      <div>
+        <label for={`${formId}-company`} class="block text-xs font-semibold text-ink uppercase tracking-wider mb-1">
+          Company Name <span class="text-rose-600">*</span>
+        </label>
+        <input
+          type="text"
+          id={`${formId}-company`}
+          name="company"
+          required
+          placeholder="e.g. Al-Futtaim Engineering"
+          class="w-full px-3.5 py-2.5 text-sm bg-canvas border border-industrial-border rounded focus:bg-white focus:border-bronze-500 transition-colors"
+        />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label for={`${formId}-email`} class="block text-xs font-semibold text-ink uppercase tracking-wider mb-1">
+          Work Email <span class="text-rose-600">*</span>
+        </label>
+        <input
+          type="email"
+          id={`${formId}-email`}
+          name="email"
+          required
+          placeholder="name@company.com"
+          class="w-full px-3.5 py-2.5 text-sm bg-canvas border border-industrial-border rounded focus:bg-white focus:border-bronze-500 transition-colors"
+        />
+      </div>
+
+      <div>
+        <label for={`${formId}-phone`} class="block text-xs font-semibold text-ink uppercase tracking-wider mb-1">
+          Contact Phone / Mobile <span class="text-rose-600">*</span>
+        </label>
+        <input
+          type="tel"
+          id={`${formId}-phone`}
+          name="phone"
+          required
+          placeholder="+971 50 123 4567"
+          class="w-full px-3.5 py-2.5 text-sm bg-canvas border border-industrial-border rounded focus:bg-white focus:border-bronze-500 transition-colors"
+        />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label for={`${formId}-division`} class="block text-xs font-semibold text-ink uppercase tracking-wider mb-1">
+          Primary Product Division <span class="text-rose-600">*</span>
+        </label>
+        <select
+          id={`${formId}-division`}
+          name="product_division"
+          required
+          class="w-full px-3.5 py-2.5 text-sm bg-canvas border border-industrial-border rounded focus:bg-white focus:border-bronze-500 transition-colors text-ink"
+        >
+          <option value="">Select Division</option>
+          {productCategories.map((cat) => (
+            <option value={cat.name} selected={cat.slug === defaultCategory}>
+              {cat.name}
+            </option>
+          ))}
+          <option value="Multi-Category Package" selected={defaultCategory === "multi"}>
+            Multi-Division Supply Package
+          </option>
+          <option value="Other Industrial Supplies">Other Specialized Supplies</option>
+        </select>
+      </div>
+
+      <div>
+        <label for={`${formId}-location`} class="block text-xs font-semibold text-ink uppercase tracking-wider mb-1">
+          Delivery Destination
+        </label>
+        <input
+          type="text"
+          id={`${formId}-location`}
+          name="delivery_location"
+          placeholder="e.g. Dubai / Abu Dhabi / JAFZA / KSA"
+          class="w-full px-3.5 py-2.5 text-sm bg-canvas border border-industrial-border rounded focus:bg-white focus:border-bronze-500 transition-colors"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label for={`${formId}-specs`} class="block text-xs font-semibold text-ink uppercase tracking-wider mb-1">
+        Material Specifications & Line Items <span class="text-rose-600">*</span>
+      </label>
+      <textarea
+        id={`${formId}-specs`}
+        name="specifications"
+        rows="4"
+        required
+        placeholder="Please detail your required sizes, material grades (e.g., A106 Gr. B, 316L, B7/2H), quantities, pressure classes, and any required MTC certificates or AML requirements..."
+        class="w-full px-3.5 py-2.5 text-sm bg-canvas border border-industrial-border rounded focus:bg-white focus:border-bronze-500 transition-colors"
+      ></textarea>
+    </div>
+
+    <div class="bg-canvas-subtle p-3 rounded text-xs text-ink-muted border border-industrial-border flex items-start gap-2">
+      <svg class="w-4 h-4 text-bronze-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <span>
+        Have an existing BOQ spreadsheet or technical drawing? You can also email it directly to 
+        <a href={`mailto:${siteConfig.contact.email}?subject=RFQ%20Submission%20-%20BOQ%20Attachment`} class="font-semibold text-ink underline hover:text-bronze-700">
+          {siteConfig.contact.email}
+        </a>
+      </span>
+    </div>
+
+    <div class="pt-2">
+      <button
+        type="submit"
+        id={`${formId}-submit-btn`}
+        class="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-ink hover:bg-bronze-700 text-white font-display font-semibold text-sm uppercase tracking-wider rounded transition-all duration-200 shadow-soft-sm hover:shadow-soft-md group"
+      >
+        <span>Submit Request for Quotation</span>
+        <svg class="w-4 h-4 text-bronze-400 group-hover:text-white group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Interactive feedback state -->
+    <div id={`${formId}-feedback`} class="hidden p-4 rounded text-sm text-center"></div>
+  </form>
+</div>
+
+<script is:inline define:vars={{ formId }}>
+  const form = document.getElementById(formId);
+  const feedback = document.getElementById(`${formId}-feedback`);
+  const submitBtn = document.getElementById(`${formId}-submit-btn`);
+
+  if (form && feedback && submitBtn) {
+    form.addEventListener('submit', (e) => {
+      // Track event if dataLayer exists
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: 'quote_request_submitted',
+          form_id: formId,
+        });
+      }
+
+      // If default placeholder action is in place, show demonstration confirmation without error
+      if (form.getAttribute('action')?.includes('placeholder_lancox')) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span>Processing Request...</span>`;
+        
+        setTimeout(() => {
+          feedback.classList.remove('hidden', 'bg-rose-50', 'text-rose-800', 'border-rose-200');
+          feedback.classList.add('bg-emerald-50', 'text-emerald-800', 'border', 'border-emerald-200');
+          feedback.innerHTML = `
+            <div class="font-bold text-base mb-1">Thank You! Your RFQ Has Been Registered.</div>
+            <p class="text-xs text-emerald-700">Our JAFZA procurement team will review your requirements and get back to you shortly. You may also reach us directly via WhatsApp for urgent inquiries.</p>
+          `;
+          submitBtn.innerHTML = `<span>RFQ Successfully Sent</span>`;
+          submitBtn.classList.replace('bg-ink', 'bg-emerald-700');
+        }, 600);
+      }
+    });
+  }
+</script>

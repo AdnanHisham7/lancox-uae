@@ -1,0 +1,168 @@
+---
+import { internationalStandards, approvedBrands } from "@/data/tradeNetwork";
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "Global Approved Brands & Engineering Standards",
+  subtitle = "LANCOX FZCO bridges world-class manufacturers to regional EPC contractors, industrial plants, and utility authorities.",
+} = Astro.props;
+
+// Map brand names to actual logo files in /public/images/brands/
+const brandLogoMap: Record<string, string> = {
+  "Schneider Electric": "/images/brands/schneider-electric.png",
+  "RS Components": "/images/brands/rs-components.png",
+  "Siemens": "/images/brands/siemens.png",
+  "Omron": "/images/brands/omron.png",
+  "SKF": "/images/brands/skf.png",
+  "Molex": "/images/brands/molex.png",
+  "Festo": "/images/brands/festo.png",
+  "3M": "/images/brands/3m.png",
+  "Flowserve": "/images/brands/flowserve.png",
+  "Fluke": "/images/brands/fluke.png",
+  "STMicroelectronics": "/images/brands/stmicroelectronics.png",
+  "SMC": "/images/brands/smc.png",
+  "McMaster-Carr": "/images/brands/mcmaster-carr.png",
+  "L&T Valves": "/images/brands/lt-valves.png",
+};
+---
+
+<section class="py-14 bg-canvas-subtle border-y border-industrial-border overflow-hidden" aria-label="Trade Network and Approved Brands Marquee">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+    <span class="text-xs font-semibold uppercase tracking-widest text-bronze-700 block mb-2">
+      Trade Network & Approved Partners
+    </span>
+    <h2 class="text-2xl sm:text-3xl font-display font-bold text-ink">
+      {title}
+    </h2>
+    <p class="text-sm text-ink-muted max-w-2xl mx-auto mt-2">
+      {subtitle}
+    </p>
+  </div>
+
+  <!-- Continuous Infinite Marquee Row 1: Approved Global Brands from Profile -->
+  <div class="relative w-full overflow-hidden marquee-container py-2.5">
+    <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-canvas-subtle to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-canvas-subtle to-transparent z-10 pointer-events-none"></div>
+
+    <div class="marquee-content gap-6 px-4">
+      {approvedBrands.map((brand) => {
+        const logoSrc = brandLogoMap[brand.name];
+        return (
+          <div class="flex items-center gap-3 px-5 py-3 rounded bg-white border border-industrial-border shadow-soft-sm hover:border-bronze-400 hover:shadow-soft-md transition-all shrink-0 cursor-default">
+            <div class="w-14 h-10 flex items-center justify-center shrink-0">
+              {logoSrc ? (
+                <img
+                  src={logoSrc}
+                  alt={`${brand.name} logo`}
+                  width="56"
+                  height="40"
+                  class="max-w-full max-h-full object-contain"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="w-10 h-10 rounded bg-ink text-white flex items-center justify-center font-display font-bold text-xs">
+                  <span class="text-bronze-400">{brand.name.substring(0, 2).toUpperCase()}</span>
+                </div>
+              )}
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="font-display font-bold text-sm text-ink">{brand.name}</span>
+                <span class="text-[10px] uppercase font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100">Approved</span>
+              </div>
+              <p class="text-[11px] text-ink-muted leading-tight mt-0.5">{brand.category}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Duplicate for continuous infinite loop without jump -->
+    <div class="marquee-content gap-6 px-4" aria-hidden="true">
+      {approvedBrands.map((brand) => {
+        const logoSrc = brandLogoMap[brand.name];
+        return (
+          <div class="flex items-center gap-3 px-5 py-3 rounded bg-white border border-industrial-border shadow-soft-sm hover:border-bronze-400 hover:shadow-soft-md transition-all shrink-0 cursor-default">
+            <div class="w-14 h-10 flex items-center justify-center shrink-0">
+              {logoSrc ? (
+                <img
+                  src={logoSrc}
+                  alt={`${brand.name} logo`}
+                  width="56"
+                  height="40"
+                  class="max-w-full max-h-full object-contain"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="w-10 h-10 rounded bg-ink text-white flex items-center justify-center font-display font-bold text-xs">
+                  <span class="text-bronze-400">{brand.name.substring(0, 2).toUpperCase()}</span>
+                </div>
+              )}
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="font-display font-bold text-sm text-ink">{brand.name}</span>
+                <span class="text-[10px] uppercase font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100">Approved</span>
+              </div>
+              <p class="text-[11px] text-ink-muted leading-tight mt-0.5">{brand.category}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  <!-- Continuous Infinite Marquee Row 2: International Standards (Reverse direction) -->
+  <div class="relative w-full overflow-hidden marquee-container py-2.5 mt-1">
+    <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-canvas-subtle to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-canvas-subtle to-transparent z-10 pointer-events-none"></div>
+
+    <div class="marquee-content-reverse gap-6 px-4">
+      {internationalStandards.map((std) => (
+        <div class="flex items-center gap-3 px-5 py-3 rounded bg-white border border-industrial-border shadow-soft-sm hover:border-bronze-400 hover:shadow-soft-md transition-all shrink-0 cursor-default">
+          <div class="w-8 h-8 rounded bg-bronze-50 border border-bronze-200 flex items-center justify-center font-display font-bold text-xs text-bronze-800">
+            ✓
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-display font-bold text-sm text-ink">{std.code}</span>
+              <span class="text-[10px] uppercase font-semibold text-bronze-700 bg-bronze-50 px-1.5 py-0.5 rounded">Standard</span>
+            </div>
+            <p class="text-xs text-ink-muted leading-tight mt-0.5">{std.scope}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Duplicate for reverse loop -->
+    <div class="marquee-content-reverse gap-6 px-4" aria-hidden="true">
+      {internationalStandards.map((std) => (
+        <div class="flex items-center gap-3 px-5 py-3 rounded bg-white border border-industrial-border shadow-soft-sm hover:border-bronze-400 hover:shadow-soft-md transition-all shrink-0 cursor-default">
+          <div class="w-8 h-8 rounded bg-bronze-50 border border-bronze-200 flex items-center justify-center font-display font-bold text-xs text-bronze-800">
+            ✓
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-display font-bold text-sm text-ink">{std.code}</span>
+              <span class="text-[10px] uppercase font-semibold text-bronze-700 bg-bronze-50 px-1.5 py-0.5 rounded">Standard</span>
+            </div>
+            <p class="text-xs text-ink-muted leading-tight mt-0.5">{std.scope}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="mt-6 text-center">
+    <p class="text-xs text-ink-muted">
+      Need materials compliant with specific project AML (Approved Manufacturer List) specifications? 
+      <a href="/contact/" class="text-bronze-700 font-semibold underline hover:text-bronze-800 ml-1">
+        Submit AML criteria for verification &rarr;
+      </a>
+    </p>
+  </div>
+</section>

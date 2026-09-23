@@ -1,0 +1,198 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import ContactForm from "@/components/ContactForm.astro";
+import { siteConfig } from "@/config/site.config";
+
+const seoTitle = "Contact LANCOX FZCO | Request a Quote JAFZA Dubai UAE";
+const seoDescription =
+  "Contact LANCOX FZCO in Jebel Ali Free Zone, Dubai. Call +971 4 265 8536 or +971 56 867 3271. Submit your RFQ for Electrical, Mechanical, Fasteners, and Safety equipment.";
+
+const breadcrumbs = [
+  { label: "Contact & RFQ Center", href: "/contact/" }
+];
+---
+
+<BaseLayout
+  title={seoTitle}
+  description={seoDescription}
+  breadcrumbs={[{ name: "Contact & RFQ Center", item: "https://lancoxuae.com/contact/" }]}
+>
+  <div class="bg-canvas-subtle border-b border-industrial-border">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+
+  <!-- Hero Header -->
+  <section class="py-14 sm:py-20 bg-canvas-subtle border-b border-industrial-border relative overflow-hidden">
+    <div class="absolute inset-0 bg-industrial-grid opacity-50 pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl" data-motion-hero>
+        <span class="text-xs font-semibold uppercase tracking-widest text-bronze-700 block mb-2">
+          Direct Commercial Engagement
+        </span>
+        <!-- Single Canonical H1 -->
+        <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-ink tracking-tight">
+          Contact & Request a Quotation (RFQ)
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-ink-secondary leading-relaxed">
+          Reach our commercial procurement desk in Jebel Ali, Dubai. We are ready to assist with single urgent line items, contract supply agreements, or large-scale multi-category project packages.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Details & Interactive RFQ Form Grid -->
+  <section class="py-16 sm:py-24 bg-canvas">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left Column: Official Contact Coordinates (Span 5) -->
+        <div class="lg:col-span-5 space-y-8" data-motion-fade-left>
+          
+          <!-- Corporate Trading Desk Image -->
+          <div class="rounded-lg overflow-hidden border border-industrial-border shadow-soft-sm bg-white">
+            <img
+              src="/images/commercial-trade-desk.jpg"
+              alt="LANCOX FZCO corporate procurement desk and engineering consultation in Dubai"
+              width="600"
+              height="338"
+              class="w-full h-auto object-cover aspect-[16/9]"
+              loading="eager"
+            />
+            <div class="p-3 bg-canvas-subtle border-t border-industrial-border flex items-center justify-between text-xs text-ink-muted">
+              <span class="font-semibold text-ink">Commercial Procurement Desk</span>
+              <span>JAFZA • Dubai, UAE</span>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 sm:p-8 rounded-lg border border-industrial-border shadow-soft-sm">
+            <span class="text-xs font-bold uppercase tracking-wider text-bronze-700 block mb-3">
+              Corporate Office & Trading Desk
+            </span>
+            <h2 class="text-xl font-display font-bold text-ink mb-6">
+              {siteConfig.legalName}
+            </h2>
+
+            <address class="not-italic text-xs sm:text-sm text-ink-secondary space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded bg-bronze-50 border border-bronze-200 text-bronze-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <strong class="font-semibold text-ink block">Physical Address:</strong>
+                  <span>{siteConfig.address.full}</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded bg-bronze-50 border border-bronze-200 text-bronze-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div>
+                  <strong class="font-semibold text-ink block">Office Telephone:</strong>
+                  <a href={`tel:${siteConfig.contact.phone}`} class="text-ink hover:text-bronze-700 transition-colors font-medium">
+                    {siteConfig.contact.phoneDisplay}
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded bg-bronze-50 border border-bronze-200 text-bronze-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <strong class="font-semibold text-ink block">Commercial Mobiles:</strong>
+                  <div class="flex flex-col sm:flex-row sm:gap-2">
+                    <a href={`tel:${siteConfig.contact.mobile1}`} class="text-ink hover:text-bronze-700 transition-colors">
+                      {siteConfig.contact.mobile1Display}
+                    </a>
+                    <span class="hidden sm:inline text-industrial-border">/</span>
+                    <a href={`tel:${siteConfig.contact.mobile2}`} class="text-ink hover:text-bronze-700 transition-colors">
+                      {siteConfig.contact.mobile2Display}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded bg-bronze-50 border border-bronze-200 text-bronze-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <strong class="font-semibold text-ink block">Official Email:</strong>
+                  <a href={`mailto:${siteConfig.contact.email}`} class="text-ink hover:text-bronze-700 transition-colors font-medium">
+                    {siteConfig.contact.email}
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 pt-2">
+                <div class="w-8 h-8 rounded bg-bronze-50 border border-bronze-200 text-bronze-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <strong class="font-semibold text-ink block">Business Hours:</strong>
+                  <span>{siteConfig.businessHours.days}</span><br />
+                  <span class="text-ink-muted">{siteConfig.businessHours.hours}</span>
+                </div>
+              </div>
+            </address>
+
+            <!-- Direct WhatsApp Button -->
+            <div class="mt-6 pt-6 border-t border-industrial-border">
+              <a
+                href={siteConfig.social.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full flex items-center justify-center gap-2.5 px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-display font-semibold text-xs uppercase tracking-wider rounded transition-colors shadow-soft-sm"
+              >
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.97.53 1.764.78 2.796.78 3.182 0 5.769-2.587 5.77-5.767 0-3.181-2.587-5.765-5.77-5.765zm3.385 8.169c-.144.405-.837.774-1.17.824-.312.045-.694.062-2.12-.529-1.821-.754-2.989-2.617-3.08-2.738-.09-.122-.734-.977-.734-1.863 0-.886.465-1.32.63-1.499.165-.18.36-.225.48-.225.12 0 .24.001.345.006.11.005.258-.042.404.307.15.36.51 1.246.555 1.336.045.09.075.195.015.315-.06.12-.09.195-.18.3-.09.105-.19.234-.27.315-.09.09-.184.187-.079.367.105.18.468.772 1.005 1.25.69.615 1.272.806 1.452.896.18.09.285.075.39-.045.105-.12.45-.525.57-.705.12-.18.24-.15.405-.09.165.06 1.05.495 1.23.585.18.09.3.135.345.21.045.075.045.435-.099.84z"/>
+                </svg>
+                <span>Instant WhatsApp Enquiry</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Yiwu Market / Dubai Traders Market Representation Box -->
+          <div class="bg-canvas-subtle p-6 rounded-lg border border-industrial-border">
+            <span class="text-xs font-bold uppercase tracking-wider text-ink-muted block mb-1">
+              Location Guide
+            </span>
+            <h3 class="font-display font-bold text-sm text-ink mb-2">
+              Dubai Traders Market, Yiwu Market
+            </h3>
+            <p class="text-xs text-ink-secondary leading-relaxed mb-4">
+              Our office is located at Unit <strong>G6304, Ground Floor</strong> inside Dubai Traders Market / Yiwu Market in Jebel Ali, easily accessible from Sheikh Zayed Road (E11) and Yiwu Market main avenues.
+            </p>
+            <div class="p-3 bg-white rounded border border-industrial-border text-xs text-ink-muted">
+              <span class="font-semibold text-ink">Free Zone Registration:</span> JAFZA P.O. Box 16888, Dubai, United Arab Emirates.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive RFQ Form (Span 7) -->
+        <div id="rfq" class="lg:col-span-7 scroll-mt-28" data-motion-fade-right>
+          <ContactForm formId="main-contact-rfq" />
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>

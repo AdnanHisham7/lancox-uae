@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Canonical XML Sitemap generated during static build
+Sitemap: https://lancoxuae.com/sitemap-index.xml

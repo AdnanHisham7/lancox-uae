@@ -1,0 +1,255 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import Marquee from "@/components/Marquee.astro";
+import { internationalStandards, tradeCorridors, tradeNetworkPillars, approvedBrands } from "@/data/tradeNetwork";
+import { siteConfig } from "@/config/site.config";
+
+const seoTitle = "Global Trade Network & Approved Brands | LANCOX FZCO Dubai";
+const seoDescription =
+  "Explore LANCOX FZCO's global procurement network across Europe, North America, East Asia, and the GCC. Supplying Siemens, Schneider, Omron, SKF, 3M, Fluke, and Festo brands from JAFZA.";
+
+const breadcrumbs = [
+  { label: "Global Trade Network", href: "/trade-network/" }
+];
+---
+
+<BaseLayout
+  title={seoTitle}
+  description={seoDescription}
+  breadcrumbs={[{ name: "Global Trade Network", item: "https://lancoxuae.com/trade-network/" }]}
+>
+  <div class="bg-canvas-subtle border-b border-industrial-border">
+    <Breadcrumbs items={breadcrumbs} />
+  </div>
+
+  <!-- Hero Header -->
+  <section class="py-14 sm:py-20 bg-canvas-subtle border-b border-industrial-border relative overflow-hidden">
+    <div class="absolute inset-0 bg-industrial-grid opacity-50 pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl" data-motion-hero>
+        <span class="text-xs font-semibold uppercase tracking-widest text-bronze-700 block mb-2">
+          International Supply Chain
+        </span>
+        <!-- Single Canonical H1 -->
+        <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-ink tracking-tight">
+          Global Supplier & Trade Network
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-ink-secondary leading-relaxed">
+          Positioned in Jebel Ali Free Zone, LANCOX FZCO serves as a trusted trading bridge between premier international manufacturers and esteemed engineering contractors across the UAE, Middle East, and worldwide.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a
+            href="#brands"
+            class="px-5 py-2.5 bg-ink text-white font-display font-semibold text-xs uppercase tracking-wider rounded hover:bg-bronze-700 transition-colors shadow-soft-sm"
+          >
+            Approved Brand Portfolio
+          </a>
+          <a
+            href="#standards"
+            class="px-5 py-2.5 bg-white border border-industrial-border text-ink font-display font-semibold text-xs uppercase tracking-wider rounded hover:bg-canvas transition-colors shadow-soft-sm"
+          >
+            Review International Standards
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Trade Corridors Map Spotlight (From PDF Page 8) -->
+  <section class="py-16 bg-white border-b border-industrial-border" data-motion-fade>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-semibold uppercase tracking-widest text-bronze-700 block mb-1">
+          International Trade Routing
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-ink">
+          Global Logistics Hub: Dubai, UAE
+        </h2>
+        <p class="text-xs sm:text-sm text-ink-muted mt-2">
+          Direct supply corridors connecting North America, Europe, East Asia, and China straight into our JAFZA consolidation depot.
+        </p>
+      </div>
+
+      <div class="rounded-lg overflow-hidden border border-industrial-border shadow-soft-md bg-canvas-subtle p-3 sm:p-6">
+        <img
+          src="/images/trade-network-map.jpg"
+          alt="Global trade network map showing logistics shipping routes converging into Dubai UAE - LANCOX FZCO"
+          width="1280"
+          height="720"
+          class="w-full h-auto object-cover rounded aspect-[16/9]"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Approved Brand Network Grid (From PDF Page 8) -->
+  <section id="brands" class="py-16 sm:py-24 bg-canvas border-b border-industrial-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12" data-motion-fade>
+        <span class="text-xs font-semibold uppercase tracking-widest text-bronze-700 block mb-2">
+          Verified Brand Relationships
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-display font-bold text-ink">
+          Approved Brands & Manufacturers
+        </h2>
+        <p class="mt-3 text-sm text-ink-secondary">
+          LANCOX FZCO procures genuine materials directly from accredited international brand manufacturers across electrical, mechanical, automation, and safety disciplines.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6" data-motion-stagger>
+        {approvedBrands.map((brand) => (
+          <div class="p-5 rounded-lg bg-white border border-industrial-border shadow-soft-sm hover:border-bronze-400 hover:shadow-soft-md transition-all flex flex-col justify-between" data-motion-item>
+            <div>
+              <div class="w-10 h-10 rounded bg-ink text-white flex items-center justify-center font-display font-extrabold text-sm mb-3">
+                <span class="text-bronze-400">{brand.name.substring(0, 2).toUpperCase()}</span>
+              </div>
+              <h3 class="font-display font-bold text-base text-ink">
+                {brand.name}
+              </h3>
+              <p class="text-xs text-ink-muted mt-1">
+                {brand.category}
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-industrial-border flex items-center justify-between text-[10px] font-semibold text-emerald-700 uppercase tracking-wider">
+              <span>Verified Partner</span>
+              <span>✓ AML Compliant</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Sourcing Pillars Grid -->
+  <section class="py-16 sm:py-24 bg-white border-b border-industrial-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12" data-motion-fade>
+        <span class="text-xs font-semibold uppercase tracking-widest text-bronze-700 block mb-2">
+          Procurement Integrity
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-ink">
+          How We Ensure Quality Across Global Supply Lines
+        </h2>
+        <p class="mt-3 text-sm text-ink-secondary">
+          Every component procured by LANCOX FZCO undergoes verified quality control protocols to protect operational safety and project timelines.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-motion-stagger>
+        {tradeNetworkPillars.map((pillar, i) => (
+          <div class="p-6 sm:p-8 rounded-lg bg-canvas border border-industrial-border shadow-soft-sm" data-motion-item>
+            <div class="w-8 h-8 rounded bg-bronze-100 text-bronze-800 font-display font-bold text-xs flex items-center justify-center mb-4">
+              0{i + 1}
+            </div>
+            <h3 class="text-lg font-display font-bold text-ink mb-2">
+              {pillar.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+              {pillar.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Continuous Scrolling Marquee -->
+  <Marquee title="Global Standards & Compliance Ecosystem" />
+
+  <!-- International Standards Directory Section -->
+  <section id="standards" class="py-16 sm:py-24 bg-canvas border-b border-industrial-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12" data-motion-fade>
+        <span class="text-xs font-semibold uppercase tracking-widest text-bronze-700 block mb-2">
+          Engineering Compliance
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-ink">
+          Governing International Standards & Codes
+        </h2>
+        <p class="mt-3 text-sm text-ink-secondary">
+          Our procurement lines are strictly aligned with international engineering and testing frameworks.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" data-motion-stagger>
+        {internationalStandards.map((std) => (
+          <div class="p-6 rounded-lg bg-white border border-industrial-border shadow-soft-sm" data-motion-item>
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-display font-extrabold text-xl text-ink">{std.code}</span>
+              <span class="text-[10px] uppercase font-bold text-bronze-700 bg-bronze-50 border border-bronze-200 px-2 py-0.5 rounded">
+                Verified Spec
+              </span>
+            </div>
+            <h3 class="font-display font-semibold text-sm text-ink mb-1">
+              {std.name}
+            </h3>
+            <p class="text-xs text-ink-muted leading-relaxed">
+              {std.scope}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Corridors & Sourcing Hubs Breakdown -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12" data-motion-fade>
+        <span class="text-xs font-semibold uppercase tracking-widest text-bronze-700 block mb-2">
+          Logistical Reach
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-ink">
+          Trade Corridors & Sourcing Origins
+        </h2>
+        <p class="mt-3 text-sm text-ink-secondary">
+          Through strategic transport agreements and direct factory relationships, we orchestrate seamless freight movement into our JAFZA consolidation facility.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" data-motion-stagger>
+        {tradeCorridors.map((c) => (
+          <div class="p-6 rounded-lg bg-canvas border border-industrial-border flex flex-col justify-between" data-motion-item>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-bronze-700 block mb-1">
+                {c.region}
+              </span>
+              <h3 class="text-lg font-display font-bold text-ink mb-2">
+                {c.hub}
+              </h3>
+              <p class="text-xs text-ink-secondary leading-relaxed">
+                {c.focus}
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-industrial-border text-[11px] text-ink-muted font-medium">
+              Direct shipping to Jebel Ali Port & Airport
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Approved Manufacturer Policy Notice -->
+      <div class="mt-12 p-6 sm:p-8 rounded-lg bg-canvas-subtle border border-industrial-border" data-motion-fade>
+        <h3 class="font-display font-bold text-base text-ink mb-2">
+          Approved Manufacturer List (AML) Sourcing Protocol
+        </h3>
+        <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+          Does your company or project hold a mandatory Approved Manufacturer List (AML)? We cross-reference your specific vendor guidelines to ensure that all line items originate strictly from pre-qualified, client-approved mills and manufacturing houses.
+        </p>
+        <div class="mt-4">
+          <a
+            href="/contact/#rfq"
+            class="inline-flex items-center text-xs font-semibold text-bronze-700 hover:text-bronze-900"
+          >
+            <span>Submit your AML requirements to our commercial desk &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

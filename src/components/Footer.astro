@@ -1,0 +1,260 @@
+---
+import { siteConfig } from "@/config/site.config";
+import { productCategories } from "@/data/products";
+import { industries } from "@/data/industries";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-surface border-t border-industrial-border text-ink-secondary" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  
+  <!-- Pre-Footer Procurement Trust Banner -->
+  <div class="bg-canvas-subtle border-b border-industrial-border py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-sm" data-motion-stagger>
+        <div class="flex items-start gap-3" data-motion-item>
+          <div class="w-8 h-8 rounded bg-bronze-100 text-bronze-700 flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-ink">JAFZA Free Zone Hub</h4>
+            <p class="text-xs text-ink-muted mt-0.5">Strategic transit & global customs-bonded logistics.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3" data-motion-item>
+          <div class="w-8 h-8 rounded bg-bronze-100 text-bronze-700 flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-ink">Verified Quality & MTCs</h4>
+            <p class="text-xs text-ink-muted mt-0.5">Compliance with ASTM, ASME, API, DIN & IEC standards.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3" data-motion-item>
+          <div class="w-8 h-8 rounded bg-bronze-100 text-bronze-700 flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-ink">Fast RFQ Turnaround</h4>
+            <p class="text-xs text-ink-muted mt-0.5">Rapid pricing and multi-item line item quotation.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3" data-motion-item>
+          <div class="w-8 h-8 rounded bg-bronze-100 text-bronze-700 flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-ink">Global Sourcing Reach</h4>
+            <p class="text-xs text-ink-muted mt-0.5">Direct relationships with international manufacturers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10" data-motion-stagger>
+      
+      <!-- Brand & NAP (Name, Address, Phone) Column (Span 2) -->
+      <div class="lg:col-span-2 space-y-5" data-motion-item>
+        <a href="/" class="flex items-center">
+          <img
+            src="/images/lancox-logo.svg"
+            alt="LANCOX FZCO"
+            width="240"
+            height="36"
+            class="h-9 w-auto object-contain"
+            loading="lazy"
+          />
+        </a>
+
+        <p class="text-sm text-ink-secondary leading-relaxed max-w-sm">
+          A licensed Jebel Ali Free Zone trading enterprise specializing in procuring certified industrial equipment, piping, electrical systems, fasteners, and safety gear for critical Middle East operations.
+        </p>
+
+        <p class="text-xs italic text-bronze-700 font-medium">
+          "{siteConfig.tagline}"
+        </p>
+
+        <!-- Official Contact Details -->
+        <address class="not-italic text-xs text-ink-secondary space-y-2.5 pt-2">
+          <div class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-bronze-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span>{siteConfig.address.full}</span>
+          </div>
+
+          <div class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-bronze-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <div class="flex flex-wrap gap-x-2">
+              <a href={`tel:${siteConfig.contact.phone}`} class="hover:text-bronze-700 transition-colors font-medium text-ink">
+                Tel: {siteConfig.contact.phoneDisplay}
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-bronze-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+            <div class="flex flex-wrap gap-x-2">
+              <span>Mob:</span>
+              <a href={`tel:${siteConfig.contact.mobile1}`} class="hover:text-bronze-700 transition-colors">
+                {siteConfig.contact.mobile1Display}
+              </a>
+              <span class="text-industrial-border">/</span>
+              <a href={`tel:${siteConfig.contact.mobile2}`} class="hover:text-bronze-700 transition-colors">
+                {siteConfig.contact.mobile2Display}
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-bronze-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <a href={`mailto:${siteConfig.contact.email}`} class="hover:text-bronze-700 transition-colors font-medium">
+              {siteConfig.contact.email}
+            </a>
+          </div>
+        </address>
+
+        <!-- WhatsApp Hotline Quick Action -->
+        <div class="pt-2">
+          <a
+            href={siteConfig.social.whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded hover:bg-emerald-100 transition-colors"
+            data-track="whatsapp-click"
+          >
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            WhatsApp Procurement Hotline: {siteConfig.contact.whatsappDisplay}
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Product Divisions -->
+      <div data-motion-item>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-ink mb-4">
+          Product Divisions
+        </h3>
+        <ul class="space-y-2.5 text-xs">
+          {productCategories.map((cat) => (
+            <li>
+              <a
+                href={`/products/${cat.slug}/`}
+                class="hover:text-bronze-700 hover:translate-x-0.5 inline-block transition-transform text-ink-secondary"
+              >
+                {cat.name}
+              </a>
+            </li>
+          ))}
+          <li class="pt-1">
+            <a
+              href="/products/"
+              class="font-semibold text-bronze-700 hover:underline flex items-center gap-1"
+            >
+              View Full Catalog Hub &rarr;
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Industries Served -->
+      <div data-motion-item>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-ink mb-4">
+          Industries Served
+        </h3>
+        <ul class="space-y-2.5 text-xs">
+          {industries.map((ind) => (
+            <li>
+              <a
+                href={`/industries/#${ind.id}`}
+                class="hover:text-bronze-700 hover:translate-x-0.5 inline-block transition-transform text-ink-secondary"
+              >
+                {ind.name}
+              </a>
+            </li>
+          ))}
+          <li class="pt-1">
+            <a
+              href="/industries/"
+              class="font-semibold text-bronze-700 hover:underline flex items-center gap-1"
+            >
+              All Industry Capabilities &rarr;
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Quick Links & Trading Network -->
+      <div data-motion-item>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-ink mb-4">
+          Corporate & Network
+        </h3>
+        <ul class="space-y-2.5 text-xs">
+          <li>
+            <a href="/about/" class="hover:text-bronze-700 text-ink-secondary">About LANCOX FZCO</a>
+          </li>
+          <li>
+            <a href="/about/#vision-mission" class="hover:text-bronze-700 text-ink-secondary">Vision & Objectives</a>
+          </li>
+          <li>
+            <a href="/trade-network/" class="hover:text-bronze-700 text-ink-secondary">Global Trade Corridors</a>
+          </li>
+          <li>
+            <a href="/trade-network/#standards" class="hover:text-bronze-700 text-ink-secondary">Specification Standards</a>
+          </li>
+          <li>
+            <a href="/contact/" class="hover:text-bronze-700 text-ink-secondary">Contact & Office Map</a>
+          </li>
+          <li>
+            <a href="/contact/#rfq" class="font-semibold text-ink hover:text-bronze-700">Request a Formal Quote</a>
+          </li>
+        </ul>
+
+        <div class="mt-6 pt-4 border-t border-industrial-border">
+          <span class="text-[11px] block font-medium text-ink-muted uppercase tracking-wider">Trading Jurisdiction</span>
+          <span class="text-xs text-ink font-medium mt-1 block">
+            Jebel Ali Free Zone Authority (JAFZA)<br />
+            P.O. Box 16888, Dubai, UAE
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar: Legal & Attribution -->
+    <div class="mt-12 pt-8 border-t border-industrial-border flex flex-col sm:flex-row items-center justify-between text-xs text-ink-muted gap-4">
+      <p>
+        &copy; {currentYear} {siteConfig.legalName}. All rights reserved. Registered Free Zone Company in Jebel Ali, Dubai, UAE.
+      </p>
+      <div class="flex items-center gap-6">
+        <a href="/about/" class="hover:text-ink transition-colors">Company Profile</a>
+        <span class="text-industrial-border">|</span>
+        <a href="/contact/" class="hover:text-ink transition-colors">Commercial Enquiry</a>
+        <span class="text-industrial-border">|</span>
+        <a href="/sitemap-index.xml" class="hover:text-ink transition-colors">XML Sitemap</a>
+      </div>
+    </div>
+
+  </div>
+</footer>

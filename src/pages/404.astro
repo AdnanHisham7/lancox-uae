@@ -1,0 +1,56 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { productCategories } from "@/data/products";
+
+const seoTitle = "404 - Page Not Found | LANCOX FZCO";
+const seoDescription = "The requested page could not be located. Please browse LANCOX FZCO's industrial products, industries, or contact our commercial procurement desk.";
+---
+
+<BaseLayout title={seoTitle} description={seoDescription} noindex={true}>
+  <section class="py-20 sm:py-32 bg-canvas text-center">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8" data-motion-hero>
+      <span class="inline-block px-3 py-1 bg-bronze-100 text-bronze-800 text-xs font-bold uppercase tracking-wider rounded mb-4">
+        Error 404
+      </span>
+      <!-- Single Canonical H1 -->
+      <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-ink tracking-tight">
+        Page Not Found
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-ink-secondary leading-relaxed">
+        The industrial resource or page you are looking for may have been moved, updated, or is temporarily unavailable.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/"
+          class="px-6 py-3 bg-ink hover:bg-bronze-700 text-white font-display font-semibold text-xs uppercase tracking-wider rounded transition-colors"
+        >
+          Return to Homepage
+        </a>
+        <a
+          href="/contact/"
+          class="px-6 py-3 bg-white border border-industrial-border text-ink font-display font-semibold text-xs uppercase tracking-wider rounded hover:bg-canvas-subtle transition-colors"
+        >
+          Contact Support Desk
+        </a>
+      </div>
+
+      <!-- Quick Product Jump -->
+      <div class="mt-12 pt-8 border-t border-industrial-border text-left">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3 text-center">
+          Explore Core Industrial Divisions:
+        </h2>
+        <div class="flex flex-wrap justify-center gap-2">
+          {productCategories.map((cat) => (
+            <a
+              href={`/products/${cat.slug}/`}
+              class="px-3 py-1.5 bg-white border border-industrial-border text-xs text-ink rounded hover:border-bronze-500 hover:text-bronze-800 transition-colors"
+            >
+              {cat.shortName}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

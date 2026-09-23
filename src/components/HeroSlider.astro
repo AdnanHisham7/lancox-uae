@@ -1,0 +1,363 @@
+---
+interface Slide {
+  image: string;
+  alt: string;
+  tag: string;
+  title: string;
+  subtitle: string;
+  primaryCtaText: string;
+  primaryCtaLink: string;
+  secondaryCtaText: string;
+  secondaryCtaLink: string;
+}
+
+const slides: Slide[] = [
+  {
+    image: "/images/hero-refinery.jpg",
+    alt: "Refinery and petrochemical plant construction with cranes and pipe racks in the UAE",
+    tag: "Jebel Ali Free Zone, Dubai",
+    title: "Industrial Equipment & Technical Supplies in UAE",
+    subtitle: "Supplying certified electrical, mechanical, fasteners, instrumentation, and safety products for Oil & Gas, Energy, Construction, and Manufacturing across the Middle East.",
+    primaryCtaText: "Request a Quote",
+    primaryCtaLink: "/contact/#rfq",
+    secondaryCtaText: "Explore Products",
+    secondaryCtaLink: "/products/",
+  },
+  {
+    image: "/images/mechanical-hero.jpg",
+    alt: "Industrial gate valves, flanges, pumps and line pipes stocked in a warehouse",
+    tag: "Mechanical & Piping Division",
+    title: "Seamless Line Pipes, Valves & Flanges",
+    subtitle: "High-pressure gate, globe, and ball valves, API line pipes, and industrial fittings conforming to ASME, ASTM, and DIN standards with mill test certificates.",
+    primaryCtaText: "Mechanical Products",
+    primaryCtaLink: "/products/mechanical/",
+    secondaryCtaText: "Request a Quote",
+    secondaryCtaLink: "/contact/#rfq",
+  },
+  {
+    image: "/images/electrical-hero.jpg",
+    alt: "Industrial power cables, switchgear panels and cable trays inside a facility",
+    tag: "Electrical & Automation Division",
+    title: "Industrial Power Cables, Switchgear & Lighting",
+    subtitle: "Complete range of LV/MV/HV power cables, explosion-proof ATEX lighting, cable management trays, and automation controls from leading global manufacturers.",
+    primaryCtaText: "Electrical Products",
+    primaryCtaLink: "/products/electrical/",
+    secondaryCtaText: "Get a Quote",
+    secondaryCtaLink: "/contact/#rfq",
+  },
+  {
+    image: "/images/fasteners-hero.jpg",
+    alt: "Stud bolts, heavy hex nuts, U-bolts and washers laid out on a steel bench",
+    tag: "Industrial Fasteners Division",
+    title: "High-Tensile Stud Bolts, Nuts & Anchor Bolts",
+    subtitle: "ASTM A193 B7/B8M stud bolts, heavy hex nuts, U-bolts, washers, and specialized bolting hardware for extreme temperature and pressure environments.",
+    primaryCtaText: "Fastener Products",
+    primaryCtaLink: "/products/fasteners/",
+    secondaryCtaText: "Submit Inquiry",
+    secondaryCtaLink: "/contact/#rfq",
+  },
+  {
+    image: "/images/jafza-port-logistics.jpg",
+    alt: "Jebel Ali port container terminal with quay cranes and the Dubai skyline",
+    tag: "Strategic Logistics Base",
+    title: "JAFZA Free Zone Gateway & Global Trade Network",
+    subtitle: "Operating from Dubai Traders Market, Yiwu Market, Jebel Ali. Fast customs-bonded transit and overland freight to Saudi Arabia, Oman, and all GCC states.",
+    primaryCtaText: "About LANCOX",
+    primaryCtaLink: "/about/",
+    secondaryCtaText: "Contact Us",
+    secondaryCtaLink: "/contact/",
+  },
+];
+
+const pad = (n: number) => String(n).padStart(2, "0");
+---
+
+<div class="hero-shell relative">
+<section
+  id="hero-slider"
+  class="hero relative isolate overflow-hidden text-white select-none"
+  aria-roledescription="carousel"
+  aria-label="Featured industrial supply divisions"
+>
+  <!-- Background photography -->
+  <div class="absolute inset-0 z-0" aria-hidden="true">
+    {slides.map((slide, idx) => (
+      <div class:list={["hero-bg", idx === 0 && "is-active"]} data-slide-index={idx}>
+        <img
+          src={slide.image}
+          alt={slide.alt}
+          width="1376"
+          height="768"
+          class="w-full h-full object-cover object-center"
+          loading={idx === 0 ? "eager" : "lazy"}
+          fetchpriority={idx === 0 ? "high" : "auto"}
+          decoding="async"
+        />
+      </div>
+    ))}
+    <!-- Scrims: reading side, header side, floor -->
+    <div class="absolute inset-0 hero-scrim-side"></div>
+    <div class="absolute inset-x-0 top-0 h-56 hero-scrim-top"></div>
+    <div class="absolute inset-x-0 bottom-0 h-1/2 hero-scrim-floor"></div>
+  </div>
+
+  <!-- Copy -->
+  <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full hero-copy">
+    <div class="hero-stack max-w-3xl">
+      {slides.map((slide, idx) => (
+        <div
+          class:list={["hero-copy-slide", idx === 0 && "is-active"]}
+          data-slide-index={idx}
+          role="group"
+          aria-roledescription="slide"
+          aria-label={`${idx + 1} of ${slides.length}`}
+        >
+          <p class="hero-eyebrow">
+            <span class="hero-eyebrow-rule" aria-hidden="true"></span>
+            {slide.tag}
+          </p>
+
+          {idx === 0 ? (
+            <h1 class="hero-title">{slide.title}</h1>
+          ) : (
+            <h2 class="hero-title">{slide.title}</h2>
+          )}
+
+          <p class="mt-5 text-base sm:text-lg text-slate-200/95 leading-relaxed max-w-2xl">
+            {slide.subtitle}
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+            <a
+              href={slide.primaryCtaLink}
+              class="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 bg-bronze-600 hover:bg-bronze-500 text-white font-display font-bold text-xs sm:text-sm uppercase tracking-wider rounded transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+            >
+              <span>{slide.primaryCtaText}</span>
+              <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            <a
+              href={slide.secondaryCtaLink}
+              class="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 text-white border border-white/35 hover:border-white/70 hover:bg-white/10 font-display font-bold text-xs sm:text-sm uppercase tracking-wider rounded transition-all duration-200 hover:-translate-y-0.5"
+            >
+              <span>{slide.secondaryCtaText}</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Controls: counter + segmented progress (left), arrows (right) -->
+  <div class="hero-controls absolute inset-x-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end justify-between gap-6">
+      <div class="flex items-center gap-4 sm:gap-5 min-w-0">
+        <p class="font-display text-sm font-bold tabular-nums tracking-wider text-white/90 shrink-0" aria-hidden="true">
+          <span id="hero-counter">01</span><span class="text-white/40"> / {pad(slides.length)}</span>
+        </p>
+        <div class="flex items-center gap-2">
+          {slides.map((slide, idx) => (
+            <button
+              type="button"
+              class:list={["hero-seg", idx === 0 && "is-active"]}
+              data-slide-index={idx}
+              aria-label={`Go to slide ${idx + 1}: ${slide.tag}`}
+            >
+              <span class="hero-seg-fill"></span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div class="hidden sm:flex items-center gap-2">
+        <button id="hero-prev-btn" type="button" class="hero-arrow" aria-label="Previous slide">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+        </button>
+        <button id="hero-next-btn" type="button" class="hero-arrow" aria-label="Next slide">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Bronze edge along the chamfer (sits outside the clipped hero so it isn't cut off) -->
+<span class="hero-cut-edge" aria-hidden="true"></span>
+</div>
+
+<style>
+  /* ---------------------------------------------------------------
+     Hero
+     The bottom-right corner is cut at the same ~37° angle as the
+     chamfers in the LANCOX mark, so the edge between hero and page
+     is part of the brand rather than a plain horizontal seam.
+  --------------------------------------------------------------- */
+  .hero-shell { --cut-x: 64px; --cut-y: 48px; }
+  @media (min-width: 1024px) { .hero-shell { --cut-x: 132px; --cut-y: 99px; } }
+
+  .hero-cut-edge {
+    position: absolute; right: 0; bottom: 0; z-index: 25; pointer-events: none;
+    width: var(--cut-x); height: var(--cut-y);
+    background: linear-gradient(to top left,
+      transparent calc(50% - 1.5px), #b58424 calc(50% - 1.5px), #b58424 calc(50% + 1.5px), transparent calc(50% + 1.5px));
+  }
+
+  .hero {
+    background: #0b0e13;
+    min-height: clamp(640px, calc(100svh - 48px), 820px);
+    display: flex;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut-y)), calc(100% - var(--cut-x)) 100%, 0 100%);
+  }
+
+  .hero-copy { padding-top: 104px; padding-bottom: 150px; }
+  @media (min-width: 1024px) { .hero-copy { padding-top: 150px; padding-bottom: 170px; } }
+
+  /* photography */
+  .hero-bg { position: absolute; inset: 0; opacity: 0; transition: opacity 1.1s ease-in-out; }
+  .hero-bg.is-active { opacity: 1; z-index: 1; }
+  .hero-bg img { transform: scale(1.02); transition: transform 9s linear; }
+  .hero-bg.is-active img { transform: scale(1.08); }
+
+  .hero-scrim-side  { background: linear-gradient(90deg, rgba(11,14,19,.93) 0%, rgba(11,14,19,.74) 38%, rgba(11,14,19,.28) 100%); z-index: 2; }
+  @media (max-width: 639px) {
+    .hero-scrim-side { background: linear-gradient(90deg, rgba(11,14,19,.9) 0%, rgba(11,14,19,.68) 100%); }
+  }
+  .hero-scrim-top   { background: linear-gradient(180deg, rgba(11,14,19,.72) 0%, rgba(11,14,19,0) 100%); z-index: 3; }
+  .hero-scrim-floor { background: linear-gradient(0deg, rgba(11,14,19,.72) 0%, rgba(11,14,19,0) 100%); z-index: 3; }
+
+  /* copy: slides stack in one grid cell so the hero never changes height */
+  .hero-stack { display: grid; }
+  .hero-copy-slide {
+    grid-area: 1 / 1;
+    opacity: 0; visibility: hidden; transform: translateY(14px);
+    transition: opacity .6s ease, transform .6s ease, visibility 0s linear .6s;
+  }
+  .hero-copy-slide.is-active {
+    opacity: 1; visibility: visible; transform: none;
+    transition: opacity .7s ease .2s, transform .7s ease .2s, visibility 0s;
+  }
+
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: .75rem;
+    margin-bottom: 1.25rem;
+    font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+    color: #e5cd94;
+  }
+  .hero-eyebrow-rule { width: 40px; height: 2px; background: #d4af61; flex: none; }
+
+  .hero-title {
+    font-family: "Plus Jakarta Sans", Inter, sans-serif;
+    font-weight: 800; letter-spacing: -.02em; line-height: 1.12; color: #fff;
+    font-size: clamp(1.9rem, 1.2rem + 3.2vw, 3.75rem);
+    text-wrap: balance;
+  }
+
+  /* controls */
+  .hero-controls { bottom: 78px; }
+  @media (min-width: 1024px) { .hero-controls { bottom: 112px; } }
+
+  .hero-seg { position: relative; width: 36px; height: 20px; display: block; }
+  @media (min-width: 640px) { .hero-seg { width: 56px; } }
+  .hero-seg::before {   /* track */
+    content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; margin-top: -1px;
+    background: rgba(255,255,255,.28);
+  }
+  .hero-seg-fill {
+    position: absolute; left: 0; right: 0; top: 50%; height: 2px; margin-top: -1px;
+    background: #d4af61; transform: scaleX(0); transform-origin: left;
+  }
+  .hero-seg.is-done .hero-seg-fill { transform: scaleX(1); }
+  .hero-seg.is-active .hero-seg-fill { animation: hero-fill var(--hero-delay, 6500ms) linear forwards; }
+  #hero-slider:hover .hero-seg.is-active .hero-seg-fill,
+  #hero-slider:focus-within .hero-seg.is-active .hero-seg-fill,
+  #hero-slider.is-touching .hero-seg.is-active .hero-seg-fill { animation-play-state: paused; }
+  @keyframes hero-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+  .hero-arrow {
+    width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center;
+    color: #fff; border: 1px solid rgba(255,255,255,.3); background: rgba(11,14,19,.25);
+    transition: background-color .2s ease, border-color .2s ease;
+  }
+  .hero-arrow:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.7); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-bg, .hero-bg img, .hero-copy-slide, .hero-copy-slide.is-active { transition-duration: .01s; transition-delay: 0s; }
+    .hero-bg.is-active img { transform: scale(1.02); }
+    .hero-seg.is-active .hero-seg-fill { animation: none; transform: scaleX(1); }
+  }
+</style>
+
+<script>
+  function initHeroSlider() {
+    const slider = document.getElementById("hero-slider");
+    if (!slider) return;
+
+    const bgs = Array.from(slider.querySelectorAll<HTMLElement>(".hero-bg"));
+    const copies = Array.from(slider.querySelectorAll<HTMLElement>(".hero-copy-slide"));
+    const segs = Array.from(slider.querySelectorAll<HTMLElement>(".hero-seg"));
+    const counter = document.getElementById("hero-counter");
+    const total = bgs.length;
+    if (total === 0) return;
+
+    let current = 0;
+
+    function goTo(target: number) {
+      const next = (target + total) % total;
+      if (next === current) return;
+
+      bgs.forEach((el, i) => el.classList.toggle("is-active", i === next));
+      copies.forEach((el, i) => el.classList.toggle("is-active", i === next));
+      segs.forEach((el, i) => {
+        el.classList.remove("is-active", "is-done");
+        if (i < next) el.classList.add("is-done");
+      });
+      // Re-add on the next frame so the fill animation restarts from zero
+      requestAnimationFrame(() => segs[next]?.classList.add("is-active"));
+
+      if (counter) counter.textContent = String(next + 1).padStart(2, "0");
+      current = next;
+    }
+
+    // Autoplay is driven by the progress bar: when its animation ends, advance.
+    // Hovering / focusing / touching pauses the animation, and therefore the autoplay.
+    slider.addEventListener("animationend", (e) => {
+      if ((e as AnimationEvent).animationName.includes("hero-fill")) goTo(current + 1);
+    });
+
+    document.getElementById("hero-next-btn")?.addEventListener("click", () => goTo(current + 1));
+    document.getElementById("hero-prev-btn")?.addEventListener("click", () => goTo(current - 1));
+    segs.forEach((seg, i) => seg.addEventListener("click", () => {
+      if (i === current) {
+        // restart current timer
+        seg.classList.remove("is-active");
+        requestAnimationFrame(() => seg.classList.add("is-active"));
+      } else {
+        goTo(i);
+      }
+    }));
+
+    // Touch: pause while a finger is down, swipe to change slide
+    let startX = 0;
+    slider.addEventListener("touchstart", (e) => {
+      startX = e.changedTouches[0].screenX;
+      slider.classList.add("is-touching");
+    }, { passive: true });
+    slider.addEventListener("touchend", (e) => {
+      slider.classList.remove("is-touching");
+      const dx = e.changedTouches[0].screenX - startX;
+      if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+    }, { passive: true });
+
+    // Don't burn through slides while the tab is hidden
+    document.addEventListener("visibilitychange", () => {
+      slider.classList.toggle("is-touching", document.hidden);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initHeroSlider);
+  } else {
+    initHeroSlider();
+  }
+</script>

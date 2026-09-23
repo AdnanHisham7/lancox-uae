@@ -1,0 +1,212 @@
+---
+import { siteConfig } from "@/config/site.config";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  breadcrumbs?: Array<{ name: string; item: string }>;
+  structuredData?: Record<string, any> | Array<Record<string, any>>;
+  noindex?: boolean;
+}
+
+const {
+  title = `${siteConfig.name} | Industrial Trading Company Jebel Ali Dubai UAE`,
+  description = siteConfig.description,
+  canonical = Astro.url.href,
+  ogImage = `${siteConfig.siteUrl}/images/og-image.jpg`,
+  ogType = "website",
+  breadcrumbs,
+  structuredData,
+  noindex = false,
+} = Astro.props;
+
+// Ensure clean canonical URL with trailing slash for static directory routing
+const cleanCanonical = canonical.endsWith("/") ? canonical : `${canonical}/`;
+
+// Organization & Local Business Schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "WholesaleStore", "LocalBusiness"],
+  "@id": `${siteConfig.siteUrl}/#organization`,
+  name: siteConfig.legalName,
+  alternateName: siteConfig.name,
+  url: siteConfig.siteUrl,
+  logo: `${siteConfig.siteUrl}/images/lancox-logo-square.png`,
+  image: `${siteConfig.siteUrl}/images/og-image.jpg`,
+  description: siteConfig.description,
+  email: siteConfig.contact.email,
+  telephone: siteConfig.contact.phoneDisplay,
+  priceRange: "$$",
+  currenciesAccepted: "AED, USD, EUR",
+  paymentAccepted: "Cash, Credit Card, Bank Wire Transfer, Letter of Credit (LC)",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: siteConfig.address.street,
+    addressLocality: siteConfig.address.city,
+    addressRegion: "Dubai",
+    postalCode: "16888",
+    addressCountry: "AE",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "24.9972",
+    longitude: "55.0744",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "08:30",
+      closes: "18:00",
+    },
+  ],
+  areaServed: [
+    { "@type": "Country", name: "United Arab Emirates" },
+    { "@type": "Country", name: "Saudi Arabia" },
+    { "@type": "Country", name: "Oman" },
+    { "@type": "Country", name: "Qatar" },
+    { "@type": "Country", name: "Kuwait" },
+    { "@type": "Country", name: "Bahrain" },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "LANCOX FZCO Industrial Trading Scope",
+    itemListElement: [
+      { "@type": "OfferCatalog", name: "Electrical Equipment & Power Systems" },
+      { "@type": "OfferCatalog", name: "Mechanical Equipment & Piping Systems" },
+      { "@type": "OfferCatalog", name: "Industrial Fasteners & Hardware" },
+      { "@type": "OfferCatalog", name: "Instrumentation & Process Automation" },
+      { "@type": "OfferCatalog", name: "Industrial Safety Products & PPE" },
+    ],
+  },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteConfig.siteUrl}/#website`,
+  url: siteConfig.siteUrl,
+  name: siteConfig.name,
+  description: siteConfig.description,
+  publisher: {
+    "@id": `${siteConfig.siteUrl}/#organization`,
+  },
+};
+
+// Breadcrumbs Schema if provided
+const breadcrumbsSchema = breadcrumbs && breadcrumbs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: breadcrumbs.map((crumb, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: crumb.name,
+    item: crumb.item,
+  })),
+} : null;
+---
+
+<head>
+  <!-- Character Set & Viewport -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, shrink-to-fit=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Page Title & Meta Description -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  
+  <!-- Indexing & Crawl Directives -->
+  {noindex ? (
+    <meta name="robots" content="noindex, nofollow" />
+  ) : (
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  )}
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href={cleanCanonical} />
+
+  <!-- Verification Tags (Configured via site.config.ts / Environment) -->
+  {siteConfig.analytics.googleSearchConsoleToken && (
+    <meta name="google-site-verification" content={siteConfig.analytics.googleSearchConsoleToken} />
+  )}
+  {siteConfig.analytics.bingWebmasterToken && (
+    <meta name="msvalidate.01" content={siteConfig.analytics.bingWebmasterToken} />
+  )}
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={cleanCanonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="LANCOX FZCO — industrial equipment and technical supplies, Jebel Ali Free Zone, Dubai" />
+  <meta property="og:site_name" content={siteConfig.name} />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={cleanCanonical} />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#fbfaf7" />
+
+  <!-- Font Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Structured Data: Organization & WebSite -->
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+
+  <!-- Structured Data: Breadcrumbs (if present) -->
+  {breadcrumbsSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbsSchema)} />
+  )}
+
+  <!-- Additional Structured Data (Product / Service etc.) -->
+  {structuredData && (
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  )}
+
+  <!-- Google Tag Manager / Analytics Hook -->
+  {siteConfig.analytics.googleTagManagerId && siteConfig.analytics.googleTagManagerId !== "GTM-LANCOX_PLACEHOLDER" && (
+    <script is:inline define:vars={{ gtmId: siteConfig.analytics.googleTagManagerId }}>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer',gtmId);
+    </script>
+  )}
+
+  {siteConfig.analytics.googleAnalyticsId && siteConfig.analytics.googleAnalyticsId !== "G-LANCOX_PLACEHOLDER" && (
+    <>
+      <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics.googleAnalyticsId}`}></script>
+      <script is:inline define:vars={{ gaId: siteConfig.analytics.googleAnalyticsId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', gaId, { 'send_page_view': true });
+      </script>
+    </>
+  )}
+</head>
