@@ -146,7 +146,7 @@ export const industries: Industry[] = [
       "Serving diverse commercial workshops, logistics hubs, maritime yards, and regional industrial parks with broad-scope technical procurement, fast-turnaround hardware, and dependable after-sales fulfillment.",
     seoTitle: "General Industrial Supplies Dubai UAE | LANCOX FZCO",
     seoDescription:
-      "General industrial goods and consumables in UAE: industrial lubricants, welding supplies, fasteners, pipe fittings, gauges, and safety equipment from JAFZA Dubai.",
+      "General industrial goods and consumables in UAE: industrial lubricants, welding supplies, fasteners, pipe fittings, gauges, and safety equipment from LANCOX FZCO, Dubai, UAE.",
     keySupplies: [
       "Industrial lubricants, synthetic greases, and anti-seize compounds",
       "Welding equipment, cutting torches, electrodes, and welding accessories",

@@ -1,7 +1,7 @@
 # LANCOX FZCO — Corporate Website & Technical SEO Platform
 
 > **Bridging the best to the esteemed hands…**  
-> Production-ready, static-first corporate website for **LANCOX FZCO**, a licensed industrial trading enterprise based in Jebel Ali Free Zone (JAFZA), Dubai, United Arab Emirates.
+> Production-ready, static-first corporate website for **LANCOX FZCO**, a premier industrial trading enterprise based in Dubai, United Arab Emirates.
 
 ---
 
@@ -49,7 +49,7 @@ export const siteConfig = {
   domain: "lancoxuae.com",
   siteUrl: "https://lancoxuae.com",
   address: {
-    full: "G6304, Ground Floor, Dubai Traders Market, Yiwu Market, P.O. Box 16888, Jebel Ali, Dubai, UAE",
+    full: "G6304, Ground Floor, Dubai Traders Market, Yiwu Market, Jebel Ali, Dubai, UAE",
     // ...
   },
   contact: {

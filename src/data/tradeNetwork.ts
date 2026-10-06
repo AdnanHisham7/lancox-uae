@@ -46,7 +46,7 @@ export const internationalStandards: StandardBadge[] = [
 ];
 
 export const tradeCorridors: TradeCorridor[] = [
-  { region: "United Arab Emirates", hub: "Jebel Ali Free Zone (JAFZA)", focus: "Strategic Regional Logistics & Central Distribution" },
+  { region: "United Arab Emirates", hub: "Dubai Logistics Hub", focus: "Strategic Regional Logistics & Central Distribution" },
   { region: "Europe", hub: "Germany, Italy & UK", focus: "Precision Valves, Heavy Heat Exchangers & Instrumentation" },
   { region: "North America", hub: "USA & Canada", focus: "High-Tensile Bolting, Severe-Service API Valves & Tubing" },
   { region: "East Asia", hub: "Japan, South Korea & Taiwan", focus: "High-Spec Seamless Pipe, High-Tech Pumps & Automation" },
@@ -64,8 +64,8 @@ export const tradeNetworkPillars = [
     description: "We cross-reference procurement requests against your project's Approved Manufacturer List (AML) to ensure exact engineering compliance.",
   },
   {
-    title: "JAFZA Strategic Hub Logistics",
-    description: "Operating from Jebel Ali Free Zone provides duty-free transit, world-class multi-modal shipping connections, and expedited regional dispatch.",
+    title: "Strategic Hub & Regional Logistics",
+    description: "Operating from Dubai provides seamless transit, world-class shipping connections, and expedited regional dispatch across UAE and the GCC.",
   },
   {
     title: "Full Material Traceability",

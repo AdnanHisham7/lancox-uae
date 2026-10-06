@@ -113,7 +113,7 @@ export const productCategories: ProductCategory[] = [
       "LANCOX FZCO delivers robust mechanical process equipment, line pipe, industrial fluid controls, and thermodynamic machinery tailored to the rigorous operational demands of petrochemical, processing, and manufacturing sectors.",
     seoTitle: "Mechanical Equipment Supplier UAE | Industrial Valves & Pipes Dubai | LANCOX FZCO",
     seoDescription:
-      "Source seamless & ERW pipes, industrial valves, centrifugal pumps, compressors, boilers, heat exchangers, and pipe fittings from LANCOX FZCO, JAFZA Dubai.",
+      "Source seamless & ERW pipes, industrial valves, centrifugal pumps, compressors, boilers, heat exchangers, and pipe fittings from LANCOX FZCO, Dubai, UAE.",
     icon: "settings",
     image: "/images/mechanical-hero.jpg",
     highlights: [
@@ -195,7 +195,7 @@ export const productCategories: ProductCategory[] = [
       "LANCOX FZCO provides certified structural fasteners, stud bolts, and custom-machined joining solutions engineered for civil infrastructure, structural steel frameworks, offshore platforms, and heavy processing vessels.",
     seoTitle: "Industrial Fasteners Supplier UAE | Stud Bolts & Heavy Hex Nuts Dubai | LANCOX FZCO",
     seoDescription:
-      "High-tensile industrial fasteners in UAE: stud bolts, hex cap screws, heavy hex nuts, anchor bolts, U-bolts, washers, and custom parts to print. JAFZA Dubai.",
+      "High-tensile industrial fasteners in UAE: stud bolts, hex cap screws, heavy hex nuts, anchor bolts, U-bolts, washers, and custom parts to print. Dubai, UAE.",
     icon: "wrench",
     image: "/images/fasteners-hero.jpg",
     highlights: [
@@ -353,7 +353,7 @@ export const productCategories: ProductCategory[] = [
       "LANCOX FZCO equips industrial workforces with certified Personal Protective Equipment (PPE), flame-retardant garments, and facility emergency safety gear that meet international HSE mandates.",
     seoTitle: "Industrial Safety Products UAE | Certified PPE & Safety Shoes Dubai | LANCOX FZCO",
     seoDescription:
-      "Industrial safety equipment supplier in UAE: certified safety shoes, FR coveralls, eye protection, helmets, gloves, and firefighting gear. Fast delivery from JAFZA.",
+      "Industrial safety equipment supplier in UAE: certified safety shoes, FR coveralls, eye protection, helmets, gloves, and firefighting gear. Fast delivery across UAE & Middle East.",
     icon: "shield-check",
     image: "/images/safety-hero.jpg",
     highlights: [

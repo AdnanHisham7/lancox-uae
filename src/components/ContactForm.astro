@@ -19,7 +19,7 @@ const { defaultCategory = "", formId = "rfq-form" } = Astro.props;
       Request for Quotation (RFQ)
     </h3>
     <p class="text-xs sm:text-sm text-ink-muted mt-1.5">
-      Submit your material specifications, Bill of Quantities (BOQ), or technical line items. Our JAFZA procurement team will review and respond promptly.
+      Submit your material specifications, Bill of Quantities (BOQ), or technical line items. Our commercial procurement team will review and respond promptly.
     </p>
   </div>
 
@@ -131,7 +131,7 @@ const { defaultCategory = "", formId = "rfq-form" } = Astro.props;
           type="text"
           id={`${formId}-location`}
           name="delivery_location"
-          placeholder="e.g. Dubai / Abu Dhabi / JAFZA / KSA"
+          placeholder="e.g. Dubai / Abu Dhabi / Sharjah / KSA"
           class="w-full px-3.5 py-2.5 text-sm bg-canvas border border-industrial-border rounded focus:bg-white focus:border-bronze-500 transition-colors"
         />
       </div>
@@ -207,7 +207,7 @@ const { defaultCategory = "", formId = "rfq-form" } = Astro.props;
           feedback.classList.add('bg-emerald-50', 'text-emerald-800', 'border', 'border-emerald-200');
           feedback.innerHTML = `
             <div class="font-bold text-base mb-1">Thank You! Your RFQ Has Been Registered.</div>
-            <p class="text-xs text-emerald-700">Our JAFZA procurement team will review your requirements and get back to you shortly. You may also reach us directly via WhatsApp for urgent inquiries.</p>
+            <p class="text-xs text-emerald-700">Our commercial procurement team will review your requirements and get back to you shortly. You may also reach us directly via WhatsApp for urgent inquiries.</p>
           `;
           submitBtn.innerHTML = `<span>RFQ Successfully Sent</span>`;
           submitBtn.classList.replace('bg-ink', 'bg-emerald-700');
