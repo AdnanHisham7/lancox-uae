@@ -6,10 +6,11 @@ import { siteConfig } from "@/config/site.config";
 import { productCategories } from "@/data/products";
 import { industries } from "@/data/industries";
 import { approvedBrands } from "@/data/tradeNetwork";
+import ClientsSection from "@/components/ClientsSection.astro";
 
 const seoTitle = "LANCOX FZCO | Industrial Trading Company Dubai UAE";
 const seoDescription =
-  "LANCOX FZCO is a trusted industrial trading company based in Dubai, UAE. Supplying certified Electrical, Mechanical, Equipment & Tools, Instrumentation, and Safety products to Oil & Gas, Energy, and Construction across UAE & Middle East.";
+  "LANCOX FZCO is a trusted industrial trading company based in Dubai, UAE. Supplying certified Electrical, Mechanical, Equipment & Tools, Instrumentation, and Safety supplies to utilities and authorities including DEWA, Sharjah Municipality, and regional industrial contractors.";
 
 const credibilityHighlights = [
   {
@@ -315,8 +316,11 @@ const credibilityHighlights = [
     </div>
   </section>
 
-  <!-- 6. Industries Served (Sector Scope) -->
-  <section class="py-14 sm:py-20 bg-white border-b border-industrial-border">
+  <!-- 6. Key Clients & Government Authorities -->
+  <ClientsSection bgClass="bg-white" />
+
+  <!-- 7. Industries Served (Sector Scope) -->
+  <section class="py-14 sm:py-20 bg-canvas border-b border-industrial-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-10" data-motion-fade>

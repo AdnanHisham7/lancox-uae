@@ -2,11 +2,12 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import Marquee from "@/components/Marquee.astro";
+import ClientsSection from "@/components/ClientsSection.astro";
 import { siteConfig } from "@/config/site.config";
 
 const seoTitle = "About LANCOX FZCO | Industrial Trading Company Dubai UAE";
 const seoDescription =
-  "Learn about LANCOX FZCO, a premier industrial trading enterprise in Dubai, UAE. Discover our vision, corporate objectives, global supplier network, and technical trading scope.";
+  "Learn about LANCOX FZCO, a premier industrial trading enterprise in Dubai, UAE. Supplying DEWA, Sharjah Municipality, and regional contractors with certified industrial products.";
 
 const corporateObjectives = [
   {
@@ -22,7 +23,7 @@ const corporateObjectives = [
     icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
   },
   {
-    title: "Reputable Global Partnerships with Reputable Global Brands",
+    title: "Reputable Global Brands",
     description:
       "Built partnerships with reputed suppliers, global brands, and certified manufacturers worldwide to ensure dependable inventory of products.",
     icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
@@ -92,7 +93,7 @@ const breadcrumbs = [
             <strong>LANCOX FZCO</strong> operates on a strong motive of becoming a bridge between different types of industries in the Middle East and across the globe. The service spectrum encompasses products, equipment, and consumables from <strong>Electrical, Mechanical, Safety, Equipment & Tools, Instrumentation, and Trading</strong> sectors.
           </p>
           <p>
-            LANCOX ensures finest quality products by uninterrupted cataloging of various products from manufacturers and suppliers around the world. We specialize in procuring and delivering high-quality supplies to General Industries, Construction, Processing & Manufacturing, Oil & Gas, Energy, and Petrochemical companies.
+            LANCOX ensures finest quality products by uninterrupted cataloging of various products from manufacturers and suppliers around the world. We specialize in procuring and delivering high-quality supplies to prominent governmental and municipal entities — including <strong>Dubai Electricity and Water Authority (DEWA)</strong> and <strong>Sharjah Municipality</strong> — as well as General Industries, Construction, Processing & Manufacturing, Energy, and Infrastructure projects.
           </p>
           <p>
             At LANCOX, we don't just trade. On the contrary, we empower industries to thrive by discovering a world of precision, trust, and unparalleled service with us.
@@ -222,8 +223,11 @@ const breadcrumbs = [
     </div>
   </section>
 
+  <!-- Key Clients & Public Sector Track Record -->
+  <ClientsSection bgClass="bg-canvas" />
+
   <!-- Strategic Location Advantage with Dubai Logistics Image -->
-  <section class="py-16 bg-canvas border-b border-industrial-border">
+  <section class="py-16 bg-white border-b border-industrial-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-white rounded-lg border border-industrial-border p-8 sm:p-12 overflow-hidden">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">

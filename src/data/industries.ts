@@ -18,10 +18,10 @@ export const industries: Industry[] = [
     tagline: "Industrial power transmission, substation equipment, MV/HV cabling, and switchgear.",
     image: "/images/electrical-hero.jpg",
     description:
-      "LANCOX FZCO supports power generation plants, substations, utility networks, and heavy electromechanical infrastructure across the UAE and Middle East with certified electrical distribution equipment, MV/HV cables, and switchgear.",
+      "LANCOX FZCO supports leading utility authorities — including Dubai Electricity and Water Authority (DEWA) — as well as power generation plants, substations, utility networks, and heavy electromechanical infrastructure across the UAE and Middle East with certified electrical distribution equipment, MV/HV cables, and switchgear.",
     seoTitle: "Electrical Power Infrastructure Supplies Dubai UAE | LANCOX FZCO",
     seoDescription:
-      "Procure certified electrical equipment in Dubai: LV/MV/HV cables, switchgear, panelboards, transformers, explosion-proof fittings, RMUs, and cable containment.",
+      "Procure certified electrical equipment in Dubai: LV/MV/HV cables, switchgear, panelboards, transformers, explosion-proof fittings, RMUs, and cable containment for DEWA and regional utilities.",
     keySupplies: [
       "LV/MV/HV power cables and copper/aluminum conductors",
       "Medium & low voltage switchgear, panelboards, and Ring Main Units (RMUs)",
@@ -32,7 +32,7 @@ export const industries: Industry[] = [
     ],
     challenges: [
       "Ensuring high thermal resilience and minimal transmission loss in extreme ambient temperatures",
-      "Compliance with regional utility network regulations (DEWA, SEWA, FEWA) and IEC frameworks",
+      "Strict compliance with regional utility authority technical specifications (such as DEWA standards) and international IEC frameworks",
       "Expedited turnaround on large-scale cable containment and distribution packages",
     ],
     standards: ["IEC", "BS", "IEEE", "NEMA", "ATEX", "UL"],
@@ -118,10 +118,10 @@ export const industries: Industry[] = [
     tagline: "Structural bolting, containment raceways, industrial lighting, and civil safety supplies.",
     image: "/images/industry-construction.jpg",
     description:
-      "Equipping major contractors and MEP specialists building high-rise infrastructure, transport terminals, commercial complexes, and industrial warehouses with certified structural hardware and electrical containment.",
-    seoTitle: "Construction Industrial Supplies Dubai UAE | Structural Fasteners & MEP | LANCOX FZCO",
+      "Equipping civic authorities such as Sharjah Municipality, as well as major contractors and MEP specialists building public infrastructure, transport terminals, commercial complexes, and industrial warehouses with certified structural hardware, piping, and electrical containment.",
+    seoTitle: "Construction & Municipal Infrastructure Supplies Dubai UAE | LANCOX FZCO",
     seoDescription:
-      "Construction industrial supplies in Dubai: ASTM A325 structural bolts, anchor bolts, cable trays, conduits, commercial lighting, and worksite safety PPE.",
+      "Construction & municipal infrastructure supplies in UAE: structural fasteners, cable trays, conduits, piping, and worksite safety PPE for Sharjah Municipality, contractors, and public projects.",
     keySupplies: [
       "ASTM A325 / A490 structural bolts, foundation anchor bolts, and U-bolts",
       "Galvanized cable trays, raceways, trunking, and ladder systems",
@@ -132,7 +132,7 @@ export const industries: Industry[] = [
     ],
     challenges: [
       "Meeting aggressive contractor procurement milestones and phased site drops",
-      "Stringent municipality and civil defense compliance for MEP materials",
+      "Stringent municipal authority compliance (Sharjah Municipality, Dubai Municipality) and Civil Defense standards for MEP and civic materials",
       "Large-volume bulk fastener and containment delivery without delays",
     ],
     standards: ["ASTM", "BS EN", "NEMA VE-1", "UL", "ISO 9001"],

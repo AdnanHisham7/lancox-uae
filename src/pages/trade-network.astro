@@ -2,12 +2,13 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import Marquee from "@/components/Marquee.astro";
+import ClientsSection from "@/components/ClientsSection.astro";
 import { tradeCorridors, tradeNetworkPillars, approvedBrands } from "@/data/tradeNetwork";
 import { siteConfig } from "@/config/site.config";
 
 const seoTitle = "Global Trade Network & Approved Brands | LANCOX FZCO Dubai";
 const seoDescription =
-  "Explore LANCOX FZCO's global procurement network across Europe, North America, East Asia, and the GCC. Supplying Schneider Electric, Siemens, ABB, OMRON, SMC, Phoenix Contact, Honeywell, and L&T brands from Dubai, UAE.";
+  "Explore LANCOX FZCO's global procurement network. Supplying authorized manufacturing brands (Schneider Electric, Siemens, ABB, OMRON, Phoenix Contact, Honeywell, L&T) to esteemed clients including DEWA and Sharjah Municipality.";
 
 const breadcrumbs = [
   { label: "Global Trade Network", href: "/trade-network/" }
@@ -37,7 +38,7 @@ const breadcrumbs = [
           Global Supplier & Trade Network
         </h1>
         <p class="mt-4 text-base sm:text-lg text-ink-secondary leading-relaxed">
-          Headquartered in Dubai, UAE, LANCOX FZCO serves as a trusted trading bridge between premier international manufacturers and esteemed engineering contractors across the UAE, Middle East, and worldwide.
+          Headquartered in Dubai, UAE, LANCOX FZCO serves as a strategic trading bridge connecting premier international manufacturing brands to key public sector clients — including <strong>Dubai Electricity and Water Authority (DEWA)</strong> and <strong>Sharjah Municipality</strong> — as well as regional contractors and industrial enterprises.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a
@@ -45,6 +46,12 @@ const breadcrumbs = [
             class="px-5 py-2.5 bg-ink text-white font-display font-semibold text-xs uppercase tracking-wider rounded hover:bg-bronze-700 transition-colors shadow-soft-sm"
           >
             Approved Brand Portfolio
+          </a>
+          <a
+            href="#clients"
+            class="px-5 py-2.5 bg-white border border-industrial-border text-ink font-display font-semibold text-xs uppercase tracking-wider rounded hover:border-bronze-500 hover:text-bronze-800 transition-colors shadow-soft-sm"
+          >
+            Our Clients (DEWA & Sharjah Municipality)
           </a>
           <a
             href="#corridors"
@@ -209,6 +216,9 @@ const breadcrumbs = [
 
   <!-- Continuous Scrolling Marquee -->
   <Marquee title="Approved International Manufacturing Brands" />
+
+  <!-- Key Clients & Government Authorities Section -->
+  <ClientsSection bgClass="bg-canvas" id="clients" />
 
   <!-- Global Corridors & Sourcing Hubs Breakdown -->
   <section id="corridors" class="py-16 sm:py-24 bg-white">

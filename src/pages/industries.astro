@@ -2,11 +2,12 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import Marquee from "@/components/Marquee.astro";
+import ClientsSection from "@/components/ClientsSection.astro";
 import { industries } from "@/data/industries";
 
 const seoTitle = "Industries Served | Electrical, Oil & Gas, Construction, Petrochemical | LANCOX FZCO";
 const seoDescription =
-  "LANCOX FZCO supplies certified industrial equipment to core sectors: Electrical & Power, Oil & Gas, Petrochemical, Construction, Energy, and Manufacturing in UAE.";
+  "LANCOX FZCO supplies certified industrial equipment to core sectors: Electrical & Power, Municipal Infrastructure, Oil & Gas, Construction, Energy, and Manufacturing in UAE. Trusted by DEWA and Sharjah Municipality.";
 
 const breadcrumbs = [
   { label: "Industries Served", href: "/industries/" }
@@ -182,6 +183,9 @@ const breadcrumbs = [
 
     </div>
   </div>
+
+  <!-- Key Clients & Public Sector Track Record -->
+  <ClientsSection bgClass="bg-white" />
 
   <!-- Sourcing Standards Marquee -->
   <Marquee />
