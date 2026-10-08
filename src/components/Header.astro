@@ -132,15 +132,15 @@ const isActive = (href: string) => {
           <button
             id="mobile-menu-btn"
             type="button"
-            class="chrome-burger p-2.5 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-bronze-500"
+            class="chrome-burger relative p-2.5 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-bronze-500 inline-flex items-center justify-center w-10 h-10"
             aria-expanded="false"
             aria-controls="mobile-menu"
             aria-label="Toggle navigation menu"
           >
-            <svg id="menu-open-icon" class="w-6 h-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg id="menu-open-icon" class="w-6 h-6 menu-icon-open" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg id="menu-close-icon" class="w-6 h-6 menu-icon-close" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -149,50 +149,56 @@ const isActive = (href: string) => {
       </div>
     </div>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-industrial-border bg-white px-4 pt-3 pb-6 space-y-2 shadow-soft-lg">
-      <nav class="space-y-1" aria-label="Mobile Navigation">
-        {siteConfig.navigation.map((item) => {
-          const active = isActive(item.href);
-          return (
-            <a
-              href={item.href}
-              class={`block px-3 py-2.5 text-base font-medium rounded-md ${
-                active
-                  ? "bg-bronze-50 text-bronze-800 font-semibold"
-                  : "text-ink-secondary hover:bg-canvas-subtle hover:text-ink"
-              }`}
-              aria-current={active ? "page" : undefined}
-            >
-              {item.label}
-            </a>
-          );
-        })}
-      </nav>
-      <div class="pt-4 border-t border-industrial-border space-y-3">
-        <a
-          href="/contact/"
-          class="w-full flex items-center justify-center px-4 py-3 text-sm font-semibold uppercase tracking-wider text-white bg-bronze-600 hover:bg-bronze-700 rounded shadow-soft-sm"
-        >
-          Request a Quote (RFQ)
-        </a>
-        <div class="text-xs text-ink-muted space-y-1.5 pt-2">
-          <p class="flex items-center gap-2">
-            <svg class="w-4 h-4 text-bronze-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-            <a href={`tel:${siteConfig.contact.phone}`} class="text-ink font-medium hover:text-bronze-700">
-              {siteConfig.contact.phoneDisplay}
-            </a>
-          </p>
-          <p class="flex items-center gap-2">
-            <svg class="w-4 h-4 text-bronze-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            <a href={`mailto:${siteConfig.contact.email}`} class="text-ink hover:text-bronze-700">
-              {siteConfig.contact.email}
-            </a>
-          </p>
+    <!-- Mobile Dropdown Menu Drawer -->
+    <div
+      id="mobile-menu"
+      class="mobile-menu-drawer md:hidden"
+      aria-hidden="true"
+    >
+      <div class="mobile-menu-inner border-t border-industrial-border bg-white px-4 pt-3 pb-6 space-y-2 shadow-soft-lg">
+        <nav class="space-y-1" aria-label="Mobile Navigation">
+          {siteConfig.navigation.map((item) => {
+            const active = isActive(item.href);
+            return (
+              <a
+                href={item.href}
+                class={`block px-3 py-2.5 text-base font-medium rounded-md transition-colors duration-150 ${
+                  active
+                    ? "bg-bronze-50 text-bronze-800 font-semibold"
+                    : "text-ink-secondary hover:bg-canvas-subtle hover:text-ink"
+                }`}
+                aria-current={active ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
+        <div class="pt-4 border-t border-industrial-border space-y-3">
+          <a
+            href="/contact/"
+            class="w-full flex items-center justify-center px-4 py-3 text-sm font-semibold uppercase tracking-wider text-white bg-bronze-600 hover:bg-bronze-700 rounded shadow-soft-sm transition-colors"
+          >
+            Request a Quote (RFQ)
+          </a>
+          <div class="text-xs text-ink-muted space-y-1.5 pt-2">
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-bronze-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <a href={`tel:${siteConfig.contact.phone}`} class="text-ink font-medium hover:text-bronze-700">
+                {siteConfig.contact.phoneDisplay}
+              </a>
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-bronze-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <a href={`mailto:${siteConfig.contact.email}`} class="text-ink hover:text-bronze-700">
+                {siteConfig.contact.email}
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -282,13 +288,62 @@ const isActive = (href: string) => {
   .is-overlay[data-state="top"][data-menu="closed"] .chrome-cta:hover { background: #b58424; }
   .is-overlay[data-state="top"][data-menu="closed"] .chrome-cta svg { color: #fff; }
 
-  .chrome-burger { color: #3f4753; }
+  .chrome-burger { color: #3f4753; position: relative; width: 2.5rem; height: 2.5rem; }
   .chrome-burger:hover { color: #12161c; background: #f5f3ed; }
   .is-overlay[data-state="top"][data-menu="closed"] .chrome-burger { color: #fff; }
   .is-overlay[data-state="top"][data-menu="closed"] .chrome-burger:hover { background: rgba(255,255,255,.12); }
 
+  /* Hamburger & Close icon smooth cross-fade rotation */
+  .menu-icon-open,
+  .menu-icon-close {
+    position: absolute;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease;
+  }
+  .chrome-burger[aria-expanded="false"] .menu-icon-open {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  .chrome-burger[aria-expanded="false"] .menu-icon-close {
+    transform: rotate(-90deg) scale(0.6);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .chrome-burger[aria-expanded="true"] .menu-icon-open {
+    transform: rotate(90deg) scale(0.6);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .chrome-burger[aria-expanded="true"] .menu-icon-close {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+
+  /* Mobile menu animated accordion drawer */
+  .mobile-menu-drawer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
+    visibility: hidden;
+  }
+  .mobile-menu-drawer.is-open {
+    grid-template-rows: 1fr;
+    visibility: visible;
+  }
+  .mobile-menu-inner {
+    overflow: hidden;
+    min-height: 0;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.28s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mobile-menu-drawer.is-open .mobile-menu-inner {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .site-chrome *, .site-chrome *::after { transition: none !important; }
+    .mobile-menu-drawer, .mobile-menu-inner { transition: none !important; }
   }
 </style>
 
@@ -297,20 +352,28 @@ const isActive = (href: string) => {
     var chrome = document.getElementById('site-chrome');
     var menuBtn = document.getElementById('mobile-menu-btn');
     var mobileMenu = document.getElementById('mobile-menu');
-    var openIcon = document.getElementById('menu-open-icon');
-    var closeIcon = document.getElementById('menu-close-icon');
     if (!chrome) return;
 
     var overlay = chrome.classList.contains('is-overlay');
 
-    if (menuBtn && mobileMenu && openIcon && closeIcon) {
+    if (menuBtn && mobileMenu) {
       menuBtn.addEventListener('click', function () {
         var expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-        menuBtn.setAttribute('aria-expanded', String(!expanded));
-        mobileMenu.classList.toggle('hidden');
-        openIcon.classList.toggle('hidden');
-        closeIcon.classList.toggle('hidden');
-        chrome.setAttribute('data-menu', expanded ? 'closed' : 'open');
+        var nextState = !expanded;
+        menuBtn.setAttribute('aria-expanded', String(nextState));
+        mobileMenu.setAttribute('aria-hidden', String(!nextState));
+        mobileMenu.classList.toggle('is-open', nextState);
+        chrome.setAttribute('data-menu', nextState ? 'open' : 'closed');
+      });
+
+      var mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          menuBtn.setAttribute('aria-expanded', 'false');
+          mobileMenu.setAttribute('aria-hidden', 'true');
+          mobileMenu.classList.remove('is-open');
+          chrome.setAttribute('data-menu', 'closed');
+        });
       });
     }
 
