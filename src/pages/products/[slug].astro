@@ -7,10 +7,18 @@ import { productCategories, type ProductCategory } from "@/data/products";
 import { siteConfig } from "@/config/site.config";
 
 export function getStaticPaths() {
-  return productCategories.map((category) => ({
+  const paths = productCategories.map((category) => ({
     params: { slug: category.slug },
     props: { category },
   }));
+  const toolsCat = productCategories.find((c) => c.slug === "equipment-tools");
+  if (toolsCat) {
+    paths.push({
+      params: { slug: "fasteners" },
+      props: { category: toolsCat },
+    });
+  }
+  return paths;
 }
 
 interface Props {

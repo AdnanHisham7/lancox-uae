@@ -6,7 +6,7 @@ import { productCategories } from "@/data/products";
 
 const seoTitle = "Industrial Products & Equipment Scope UAE | LANCOX FZCO Dubai";
 const seoDescription =
-  "Comprehensive industrial supply catalog: Electrical equipment, Mechanical piping & valves, Industrial fasteners, Process instrumentation, and PPE safety gear. Dubai, UAE.";
+  "Comprehensive industrial supply catalog: Electrical equipment, Mechanical piping & valves, Industrial equipment & tools, Process instrumentation, and PPE safety gear. Dubai, UAE.";
 
 const breadcrumbs = [
   { label: "Products & Supply Scope", href: "/products/" }
@@ -128,34 +128,27 @@ const breadcrumbs = [
             </div>
           </div>
 
-          <!-- Product Families Breakdown -->
+          <!-- Product Families Breakdown (Clean Bullet Points) -->
           <div class="p-6 sm:p-10">
-            <h3 class="text-xs font-bold uppercase tracking-wider text-ink-muted mb-6">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-ink-muted mb-5">
               Product Families & Included Specifications
             </h3>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-motion-stagger>
+            <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3.5">
               {category.productFamilies.map((family) => (
-                <div class="p-5 rounded-lg bg-canvas border border-industrial-border/80 hover:border-bronze-300 transition-colors flex flex-col justify-between" data-motion-item>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-bronze-600 font-bold text-lg leading-none shrink-0 mt-0.5">•</span>
                   <div>
-                    <h4 class="font-display font-bold text-base text-ink mb-1.5">
+                    <span class="font-display font-semibold text-sm text-ink leading-snug block">
                       {family.name}
-                    </h4>
-                    <p class="text-xs text-ink-muted mb-3 leading-relaxed">
-                      {family.description}
-                    </p>
-                    <ul class="space-y-1.5 text-xs text-ink-secondary border-t border-industrial-border pt-3">
-                      {family.items.map((item) => (
-                        <li class="flex items-start gap-2">
-                          <span class="text-bronze-600 font-bold">•</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    </span>
+                    <span class="text-xs text-ink-muted leading-relaxed block mt-0.5">
+                      {family.items.slice(0, 3).join(", ")}
+                    </span>
                   </div>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
 
             <!-- Key Applications Strip -->
             <div class="mt-8 pt-6 border-t border-industrial-border flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs">
@@ -194,7 +187,7 @@ const breadcrumbs = [
         Need Items Across Multiple Product Categories?
       </h2>
       <p class="mt-3 text-sm text-ink-secondary max-w-xl mx-auto leading-relaxed">
-        Save administrative overhead by submitting your complete Bill of Quantities (BOQ). We consolidate electrical, mechanical, fasteners, and safety gear into unified shipping schedules.
+        Save administrative overhead by submitting your complete Bill of Quantities (BOQ). We consolidate electrical, mechanical, equipment & tools, and safety gear into unified shipping schedules.
       </p>
       <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
         <a

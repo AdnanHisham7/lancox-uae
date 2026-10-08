@@ -28,7 +28,7 @@
 | [`/products/`](https://lancoxuae.com/products/) | **Products Hub**: Unified technical catalog overview covering all 5 core divisions with specification filters. |
 | [`/products/electrical/`](https://lancoxuae.com/products/electrical/) | **Electrical Division**: LV/MV/HV cables, conduits, switchgear, RMUs, transformers, explosion-proof fittings, lighting, and cable containment. |
 | [`/products/mechanical/`](https://lancoxuae.com/products/mechanical/) | **Mechanical Division**: Seamless/ERW/SAW pipes, industrial valves (gate, globe, ball, check, MOV), pumps, compressors, boilers, and flanges. |
-| [`/products/fasteners/`](https://lancoxuae.com/products/fasteners/) | **Fasteners Division**: High-tensile stud bolts (A193 B7/B8M), heavy hex nuts (A194 2H), structural bolts (A325), washers, and custom parts to print. |
+| [`/products/equipment-tools/`](https://lancoxuae.com/products/equipment-tools/) | **Equipment & Tools Division**: Professional hand tools (1000V insulated), torque wrenches, diagnostic inspection instruments, underground cable detectors, and sheath fault locators. |
 | [`/products/instrumentation/`](https://lancoxuae.com/products/instrumentation/) | **Instrumentation Division**: Stainless tubing, compression fittings, flow meters, pressure transmitters, manifolds, RTDs, and fire & gas detectors. |
 | [`/products/safety/`](https://lancoxuae.com/products/safety/) | **Safety Division**: Certified PPE, EN ISO safety shoes, FR coveralls (NFPA 2112), helmets, protective eyewear, and firefighting equipment. |
 | [`/industries/`](https://lancoxuae.com/industries/) | **Industries Served**: Deep technical breakdown of 6 sectors (Oil & Gas, Petrochemical, Energy, Construction, Processing & Manufacturing, General Industries). |

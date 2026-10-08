@@ -54,7 +54,7 @@ export const siteConfig: SiteConfig = {
   domain: "lancoxuae.com",
   siteUrl: "https://lancoxuae.com",
   description:
-    "LANCOX FZCO is a premier industrial trading company based in United Arab Emirates. We procure and supply certified Electrical, Mechanical, Fasteners, Instrumentation, and Industrial Safety equipment across the Middle East.",
+    "LANCOX FZCO is a premier industrial trading company based in United Arab Emirates. We procure and supply certified Electrical, Mechanical, Equipment & Tools, Instrumentation, and Industrial Safety equipment across the Middle East.",
   address: {
     building: "F4107, First Floor",
     market: "Dubai Traders Market, Yiwu Market",

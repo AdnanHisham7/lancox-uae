@@ -13,6 +13,31 @@ export interface Industry {
 
 export const industries: Industry[] = [
   {
+    id: "electrical",
+    name: "Electrical & Power Infrastructure",
+    tagline: "Industrial power transmission, substation equipment, MV/HV cabling, and switchgear.",
+    image: "/images/electrical-hero.jpg",
+    description:
+      "LANCOX FZCO supports power generation plants, substations, utility networks, and heavy electromechanical infrastructure across the UAE and Middle East with certified electrical distribution equipment, MV/HV cables, and switchgear.",
+    seoTitle: "Electrical Power Infrastructure Supplies Dubai UAE | LANCOX FZCO",
+    seoDescription:
+      "Procure certified electrical equipment in Dubai: LV/MV/HV cables, switchgear, panelboards, transformers, explosion-proof fittings, RMUs, and cable containment.",
+    keySupplies: [
+      "LV/MV/HV power cables and copper/aluminum conductors",
+      "Medium & low voltage switchgear, panelboards, and Ring Main Units (RMUs)",
+      "Power transformers, instrument current transformers, and protection relays",
+      "Heavy-duty cable trays, ladders, raceways, and galvanized conduits",
+      "ATEX / IECEx certified explosion-proof junction boxes and lighting",
+      "Grounding systems, exothermic weld connections, and lightning protection",
+    ],
+    challenges: [
+      "Ensuring high thermal resilience and minimal transmission loss in extreme ambient temperatures",
+      "Compliance with regional utility network regulations (DEWA, SEWA, FEWA) and IEC frameworks",
+      "Expedited turnaround on large-scale cable containment and distribution packages",
+    ],
+    standards: ["IEC", "BS", "IEEE", "NEMA", "ATEX", "UL"],
+  },
+  {
     id: "oil-and-gas",
     name: "Oil & Gas",
     tagline: "High-spec piping, severe-service valves, explosion-proof electrical, and safety supplies.",
@@ -25,7 +50,7 @@ export const industries: Industry[] = [
     keySupplies: [
       "API 6D and API 600 ball, gate, globe, and check valves",
       "ASTM A106 / A333 seamless line pipe & high-yield fittings",
-      "ASTM A193 B7/B8M high-tensile stud bolts & heavy hex nuts",
+      "Seamless pipes, flanges, and high-yield line fittings",
       "ATEX/IECEx explosion-proof junction boxes and lighting",
       "Fire & gas detection systems and instrumentation manifolds",
       "NFPA 2112 / EN 11612 certified flame-resistant (FR) coveralls",
