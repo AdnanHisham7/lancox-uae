@@ -7,7 +7,7 @@ import { siteConfig } from "@/config/site.config";
 
 const seoTitle = "Global Trade Network & Approved Brands | LANCOX FZCO Dubai";
 const seoDescription =
-  "Explore LANCOX FZCO's global procurement network across Europe, North America, East Asia, and the GCC. Supplying Siemens, Schneider, Omron, SKF, 3M, Fluke, and Festo brands from Dubai, UAE.";
+  "Explore LANCOX FZCO's global procurement network across Europe, North America, East Asia, and the GCC. Supplying Schneider Electric, Siemens, ABB, OMRON, SMC, Phoenix Contact, Honeywell, and L&T brands from Dubai, UAE.";
 
 const breadcrumbs = [
   { label: "Global Trade Network", href: "/trade-network/" }
@@ -110,33 +110,37 @@ const breadcrumbs = [
         </p>
       </div>
 
-      <!-- Organic Scattered Bubbles Field -->
+      <!-- Organic Scattered Bubbles Field with Real Logos -->
       <div class="flex flex-wrap items-center justify-center gap-3.5 sm:gap-5 max-w-5xl mx-auto py-2" data-motion-stagger>
         {approvedBrands.map((brand, idx) => {
           const isFeatured = idx % 3 === 0;
-          const isAlt = idx % 2 === 1;
           const offsetClass = idx % 4 === 1 ? "sm:translate-y-3" : idx % 4 === 3 ? "sm:-translate-y-3" : "";
 
           return (
             <div
-              class={`group relative inline-flex items-center gap-3 px-5 py-3 sm:px-6 sm:py-3.5 rounded-full border bg-white shadow-soft-sm hover:shadow-soft-md transition-all duration-300 hover:scale-105 hover:-translate-y-1.5 cursor-default ${offsetClass} ${
+              class={`group relative inline-flex items-center gap-3 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full border bg-white shadow-soft-sm hover:shadow-soft-md transition-all duration-300 hover:scale-105 hover:-translate-y-1.5 cursor-default ${offsetClass} ${
                 isFeatured
                   ? "border-bronze-300 ring-1 ring-bronze-200/60 hover:border-bronze-500"
                   : "border-industrial-border hover:border-bronze-400"
               }`}
               data-motion-item
             >
-              <!-- Circular Avatar Badge -->
-              <div
-                class={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-display font-extrabold text-xs shrink-0 transition-transform duration-300 group-hover:rotate-6 ${
-                  isFeatured
-                    ? "bg-ink text-bronze-400 shadow-sm"
-                    : isAlt
-                    ? "bg-bronze-100 text-bronze-800"
-                    : "bg-canvas-subtle text-ink border border-industrial-border"
-                }`}
-              >
-                <span>{brand.name.substring(0, 2).toUpperCase()}</span>
+              <!-- Brand Logo Plate inside Bubble -->
+              <div class="w-12 h-9 sm:w-14 sm:h-10 rounded-full bg-canvas-subtle border border-industrial-border/70 flex items-center justify-center p-1.5 shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-110">
+                {brand.logo ? (
+                  <img
+                    src={brand.logo}
+                    alt={`${brand.name} logo`}
+                    width="56"
+                    height="36"
+                    class="max-w-full max-h-full object-contain"
+                    loading="lazy"
+                  />
+                ) : (
+                  <span class="font-display font-extrabold text-xs text-bronze-700">
+                    {brand.name.substring(0, 2).toUpperCase()}
+                  </span>
+                )}
               </div>
 
               <!-- Brand Name & Category -->

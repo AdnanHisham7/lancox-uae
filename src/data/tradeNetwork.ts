@@ -13,23 +13,100 @@ export interface TradeCorridor {
 export interface ApprovedBrand {
   name: string;
   category: string;
+  logo: string;
 }
 
 export const approvedBrands: ApprovedBrand[] = [
-  { name: "Schneider Electric", category: "Electrical & Automation" },
-  { name: "RS Components", category: "Industrial Consumables & MRO" },
-  { name: "Siemens", category: "Drives, Switchgear & Automation" },
-  { name: "Omron", category: "Industrial Sensors & Relays" },
-  { name: "SKF", category: "Bearings, Seals & Lubrication" },
-  { name: "Molex", category: "Interconnectors & Cabling" },
-  { name: "Festo", category: "Pneumatics & Process Automation" },
-  { name: "3M", category: "Safety PPE & Industrial Adhesives" },
-  { name: "Flowserve", category: "Pumps, Valves & Mechanical Seals" },
-  { name: "Fluke", category: "Test & Calibration Instruments" },
-  { name: "STMicroelectronics", category: "Semiconductors & Controls" },
-  { name: "SMC", category: "Pneumatic Control Equipment" },
-  { name: "McMaster-Carr", category: "Industrial Hardware & Fasteners" },
-  { name: "L&T Valves", category: "High-Pressure Process Valves" },
+  {
+    name: "Schneider Electric",
+    category: "Electrical Distribution & Automation",
+    logo: "/images/brands/schneider-electric.png",
+  },
+  {
+    name: "Siemens",
+    category: "Switchgear, Drives & Industrial Controls",
+    logo: "/images/brands/siemens.png",
+  },
+  {
+    name: "ABB",
+    category: "Electrification, Power Systems & Automation",
+    logo: "/images/brands/abb.svg",
+  },
+  {
+    name: "OMRON",
+    category: "Industrial Sensors, Relays & Automation",
+    logo: "/images/brands/omron.png",
+  },
+  {
+    name: "SMC",
+    category: "Pneumatics & Fluid Power Controls",
+    logo: "/images/brands/smc.png",
+  },
+  {
+    name: "RSB",
+    category: "Automotive, Transmission & Heavy Machining",
+    logo: "/images/brands/rsb.png",
+  },
+  {
+    name: "Phoenix Contact",
+    category: "Terminal Blocks, Surge Protection & Interface",
+    logo: "/images/brands/phoenix-contact.svg",
+  },
+  {
+    name: "Larsen & Toubro (L&T)",
+    category: "Switchgear, Process Valves & Electrical Equipment",
+    logo: "/images/brands/larsen-toubro.svg",
+  },
+  {
+    name: "Tanbos",
+    category: "Cable Fault Locators & Diagnostic Test Sets",
+    logo: "/images/brands/tanbos.png",
+  },
+  {
+    name: "Rittal",
+    category: "Industrial Enclosures & Climate Control",
+    logo: "/images/brands/rittal.svg",
+  },
+  {
+    name: "ebm-papst",
+    category: "Industrial Fans, Blowers & Drive Engineering",
+    logo: "/images/brands/ebm-papst.svg",
+  },
+  {
+    name: "Honeywell",
+    category: "Process Solutions, Sensors & Field Instrumentation",
+    logo: "/images/brands/honeywell.svg",
+  },
+  {
+    name: "MEAN WELL",
+    category: "Industrial Power Supplies & LED Drivers",
+    logo: "/images/brands/mean-well.png",
+  },
+  {
+    name: "Philips",
+    category: "Professional & Hazardous Area Lighting",
+    logo: "/images/brands/philips.svg",
+  },
+  {
+    name: "LEDVANCE",
+    category: "Industrial Luminaires & LED Systems",
+    logo: "/images/brands/ledvance.svg",
+  },
+  {
+    name: "TopWorx",
+    category: "Discrete Valve Control & Position Sensing",
+    logo: "/images/brands/topworx.png",
+  },
+  {
+    name: "Perkins",
+    category: "Diesel Engines & Power Generation",
+    logo: "/images/brands/perkins.svg",
+  },
+  {
+    name: "RAKtherm",
+    category: "PPR Piping Systems & High-Pressure Plumbing",
+    logo: "/images/brands/raktherm.png",
+  },
 ];
 
 export const internationalStandards: StandardBadge[] = [

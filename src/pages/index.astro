@@ -7,22 +7,6 @@ import { productCategories } from "@/data/products";
 import { industries } from "@/data/industries";
 import { approvedBrands } from "@/data/tradeNetwork";
 
-const brandLogoMap: Record<string, string> = {
-  "Schneider Electric": "/images/brands/schneider-electric.png",
-  "RS Components": "/images/brands/rs-components.png",
-  "Siemens": "/images/brands/siemens.png",
-  "Omron": "/images/brands/omron.png",
-  "SKF": "/images/brands/skf.png",
-  "Molex": "/images/brands/molex.png",
-  "Festo": "/images/brands/festo.png",
-  "3M": "/images/brands/3m.png",
-  "Flowserve": "/images/brands/flowserve.png",
-  "Fluke": "/images/brands/fluke.png",
-  "STMicroelectronics": "/images/brands/stmicroelectronics.png",
-  "SMC": "/images/brands/smc.png",
-  "McMaster-Carr": "/images/brands/mcmaster-carr.png",
-  "L&T Valves": "/images/brands/lt-valves.png",
-};
 const seoTitle = "LANCOX FZCO | Industrial Trading Company Dubai UAE";
 const seoDescription =
   "LANCOX FZCO is a trusted industrial trading company based in Dubai, UAE. Supplying certified Electrical, Mechanical, Equipment & Tools, Instrumentation, and Safety products to Oil & Gas, Energy, and Construction across UAE & Middle East.";
@@ -290,37 +274,33 @@ const credibilityHighlights = [
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4" data-motion-stagger>
-        {approvedBrands.slice(0, 12).map((brand) => {
-          const logoSrc = brandLogoMap[brand.name];
-          return (
-            <div
-              class="p-4 rounded-lg bg-white border border-industrial-border shadow-soft-sm hover:border-bronze-400 transition-colors flex items-center gap-3.5"
-              data-motion-item
-            >
-              <div class="w-12 h-10 flex items-center justify-center shrink-0">
-                {logoSrc ? (
-                  <img
-                    src={logoSrc}
-                    alt={`${brand.name} logo`}
-                    width="48"
-                    height="40"
-                    class="max-w-full max-h-full object-contain"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div class="w-9 h-9 rounded bg-ink text-white font-display font-extrabold text-xs flex items-center justify-center">
-                    <span class="text-bronze-400">{brand.name.substring(0, 2).toUpperCase()}</span>
-                  </div>
-                )}
-              </div>
-              <div class="truncate">
-                <h3 class="font-display font-bold text-sm text-ink truncate">{brand.name}</h3>
-                <span class="text-[11px] text-ink-muted block truncate">{brand.category}</span>
-              </div>
+        {approvedBrands.map((brand) => (
+          <div
+            class="p-4 rounded-lg bg-white border border-industrial-border shadow-soft-sm hover:border-bronze-400 transition-colors flex items-center gap-3.5"
+            data-motion-item
+          >
+            <div class="w-12 h-10 flex items-center justify-center shrink-0">
+              {brand.logo ? (
+                <img
+                  src={brand.logo}
+                  alt={`${brand.name} logo`}
+                  width="48"
+                  height="40"
+                  class="max-w-full max-h-full object-contain"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="w-9 h-9 rounded bg-ink text-white font-display font-extrabold text-xs flex items-center justify-center">
+                  <span class="text-bronze-400">{brand.name.substring(0, 2).toUpperCase()}</span>
+                </div>
+              )}
             </div>
-          );
-        })}
-
+            <div class="truncate">
+              <h3 class="font-display font-bold text-sm text-ink truncate">{brand.name}</h3>
+              <span class="text-[11px] text-ink-muted block truncate">{brand.category}</span>
+            </div>
+          </div>
+        ))}
       </div>
 
       <div class="mt-8 text-center" data-motion-fade>

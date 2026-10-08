@@ -11,25 +11,7 @@ const {
   subtitle = "LANCOX FZCO bridges world-class manufacturers to regional EPC contractors, industrial plants, and utility authorities.",
 } = Astro.props;
 
-// Map brand names to actual logo files in /public/images/brands/
-const brandLogoMap: Record<string, string> = {
-  "Schneider Electric": "/images/brands/schneider-electric.png",
-  "RS Components": "/images/brands/rs-components.png",
-  "Siemens": "/images/brands/siemens.png",
-  "Omron": "/images/brands/omron.png",
-  "SKF": "/images/brands/skf.png",
-  "Molex": "/images/brands/molex.png",
-  "Festo": "/images/brands/festo.png",
-  "3M": "/images/brands/3m.png",
-  "Flowserve": "/images/brands/flowserve.png",
-  "Fluke": "/images/brands/fluke.png",
-  "STMicroelectronics": "/images/brands/stmicroelectronics.png",
-  "SMC": "/images/brands/smc.png",
-  "McMaster-Carr": "/images/brands/mcmaster-carr.png",
-  "L&T Valves": "/images/brands/lt-valves.png",
-};
-
-// Split approved brands into two distinct alternating rows
+// Split the 18 approved brands into two distinct alternating rows of 9 brands each
 const row1Brands = approvedBrands.filter((_, idx) => idx % 2 === 0);
 const row2Brands = approvedBrands.filter((_, idx) => idx % 2 !== 0);
 ---
@@ -54,7 +36,7 @@ const row2Brands = approvedBrands.filter((_, idx) => idx % 2 !== 0);
 
     <div class="marquee-content gap-6 px-4">
       {row1Brands.map((brand) => {
-        const logoSrc = brandLogoMap[brand.name];
+        const logoSrc = brand.logo;
         return (
           <div class="flex items-center gap-3 px-5 py-3 rounded bg-white border border-industrial-border shadow-soft-sm hover:border-bronze-400 hover:shadow-soft-md transition-all shrink-0 cursor-default">
             <div class="w-14 h-10 flex items-center justify-center shrink-0">
@@ -88,7 +70,7 @@ const row2Brands = approvedBrands.filter((_, idx) => idx % 2 !== 0);
     <!-- Duplicate for continuous infinite loop without jump -->
     <div class="marquee-content gap-6 px-4" aria-hidden="true">
       {row1Brands.map((brand) => {
-        const logoSrc = brandLogoMap[brand.name];
+        const logoSrc = brand.logo;
         return (
           <div class="flex items-center gap-3 px-5 py-3 rounded bg-white border border-industrial-border shadow-soft-sm hover:border-bronze-400 hover:shadow-soft-md transition-all shrink-0 cursor-default">
             <div class="w-14 h-10 flex items-center justify-center shrink-0">
@@ -127,7 +109,7 @@ const row2Brands = approvedBrands.filter((_, idx) => idx % 2 !== 0);
 
     <div class="marquee-content-reverse gap-6 px-4">
       {row2Brands.map((brand) => {
-        const logoSrc = brandLogoMap[brand.name];
+        const logoSrc = brand.logo;
         return (
           <div class="flex items-center gap-3 px-5 py-3 rounded bg-white border border-industrial-border shadow-soft-sm hover:border-bronze-400 hover:shadow-soft-md transition-all shrink-0 cursor-default">
             <div class="w-14 h-10 flex items-center justify-center shrink-0">
@@ -161,7 +143,7 @@ const row2Brands = approvedBrands.filter((_, idx) => idx % 2 !== 0);
     <!-- Duplicate for reverse loop -->
     <div class="marquee-content-reverse gap-6 px-4" aria-hidden="true">
       {row2Brands.map((brand) => {
-        const logoSrc = brandLogoMap[brand.name];
+        const logoSrc = brand.logo;
         return (
           <div class="flex items-center gap-3 px-5 py-3 rounded bg-white border border-industrial-border shadow-soft-sm hover:border-bronze-400 hover:shadow-soft-md transition-all shrink-0 cursor-default">
             <div class="w-14 h-10 flex items-center justify-center shrink-0">
