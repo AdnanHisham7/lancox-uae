@@ -18,10 +18,10 @@ export interface SiteConfig {
     email: string;
     phone: string;
     phoneDisplay: string;
-    mobile1: string;
-    mobile1Display: string;
-    mobile2: string;
-    mobile2Display: string;
+    mobile1?: string;
+    mobile1Display?: string;
+    mobile2?: string;
+    mobile2Display?: string;
     whatsapp: string;
     whatsappDisplay: string;
   };
@@ -56,24 +56,20 @@ export const siteConfig: SiteConfig = {
   description:
     "LANCOX FZCO is a premier industrial trading company based in United Arab Emirates. We procure and supply certified Electrical, Mechanical, Fasteners, Instrumentation, and Industrial Safety equipment across the Middle East.",
   address: {
-    building: "G6304, Ground Floor",
+    building: "F4107, First Floor",
     market: "Dubai Traders Market, Yiwu Market",
     area: "Jebel Ali",
     street: "Yiwu Market, Dubai Traders Market, Jebel Ali",
     city: "Dubai",
     country: "United Arab Emirates",
-    full: "G6304, Ground Floor, Dubai Traders Market, Yiwu Market, Jebel Ali, Dubai, UAE",
+    full: "F4107, First Floor, Dubai Traders Market, Yiwu Market, Jebel Ali, Dubai, UAE",
   },
   contact: {
-    email: "lancoxuae@outlook.com",
-    phone: "+97142658536",
-    phoneDisplay: "+971 4 265 8536",
-    mobile1: "+971568673271",
-    mobile1Display: "+971 56 867 3271",
-    mobile2: "+971509410053",
-    mobile2Display: "+971 50 941 0053",
-    whatsapp: "971568673271",
-    whatsappDisplay: "+971 56 867 3271",
+    email: "sales@lancoxuae.com",
+    phone: "+971585828231",
+    phoneDisplay: "+971 58 582 8231",
+    whatsapp: "971509410053",
+    whatsappDisplay: "+971 50 941 0053",
   },
   businessHours: {
     days: "Monday – Saturday",
@@ -82,7 +78,7 @@ export const siteConfig: SiteConfig = {
   },
   social: {
     whatsappLink:
-      "https://wa.me/971568673271?text=Hello%20LANCOX%20FZCO%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20industrial%20supplies.",
+      "https://wa.me/971509410053?text=Hello%20LANCOX%20FZCO%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20industrial%20supplies.",
   },
   analytics: {
     // Configurable through environment variables or centralized here

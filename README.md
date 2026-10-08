@@ -49,15 +49,13 @@ export const siteConfig = {
   domain: "lancoxuae.com",
   siteUrl: "https://lancoxuae.com",
   address: {
-    full: "G6304, Ground Floor, Dubai Traders Market, Yiwu Market, Jebel Ali, Dubai, UAE",
+    full: "F4107, First Floor, Dubai Traders Market, Yiwu Market, Jebel Ali, Dubai, UAE",
     // ...
   },
   contact: {
-    email: "lancoxuae@outlook.com",
-    phoneDisplay: "+971 4 265 8536",
-    mobile1Display: "+971 56 867 3271",
-    mobile2Display: "+971 50 941 0053",
-    whatsapp: "971568673271",
+    email: "sales@lancoxuae.com",
+    phoneDisplay: "+971 58 582 8231",
+    whatsapp: "971509410053",
   },
   analytics: {
     googleTagManagerId: import.meta.env.PUBLIC_GTM_ID || "GTM-LANCOX_PLACEHOLDER",
